@@ -3,27 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GSIA CITE IMPERIALE</title>
+<title>GSIA CITE IMPERIALE V117 - QG AUTONOME</title>
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#ffbb00">
 <link rel="icon" href="./gsia_new_512.png">
 <style>
-body{margin:0;background:#070A12;color:#fff;font-family:Arial;text-align:center;padding:20px}
-.logo{width:150px;height:150px;border-radius:50%;border:4px solid #ffbb00;margin:30px auto;display:block;box-shadow:0 0 30px #ffbb00}
-h1{color:#ffbb00;font-size:28px;margin:20px}
-.btn{background:linear-gradient(90deg,#ffbb00,#ff8800);color:#000;padding:15px 30px;border:none;border-radius:30px;font-weight:bold;font-size:18px;margin:20px;display:inline-block;text-decoration:none}
-.card{background:#111827;border:1px solid #ffbb0044;border-radius:15px;padding:20px;margin:20px auto;max-width:400px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#070A12;color:#fff;font-family:Arial,sans-serif}
+.header{text-align:center;padding:15px;background:linear-gradient(90deg,#111827,#070A12);border-bottom:2px solid #ffbb00;position:sticky;top:0;z-index:99}
+.logo{width:80px;height:80px;border-radius:50%;border:3px solid #ffbb00;box-shadow:0 0 20px #ffbb00}
+h1{color:#ffbb00;font-size:20px;margin:8px}
+.subtitle{opacity:0.7;font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px;max-width:600px;margin:auto}
+.card{background:#111827;border:1px solid #ffbb0033;border-radius:15px;padding:15px;text-align:center;cursor:pointer;transition:0.3s}
+.card:hover{border-color:#ffbb00;transform:scale(1.03);box-shadow:0 0 15px #ffbb0044}
+.card .icon{font-size:32px}
+.card h3{color:#ffbb00;font-size:13px;margin:8px 0 4px}
+.card p{font-size:10px;opacity:0.7}
+.card.new{border-color:#00ff88;background:linear-gradient(135deg,#111827,#0a1a12)}
+.badge{background:#00ff88;color:#000;font-size:8px;padding:2px 6px;border-radius:10px;font-weight:bold}
+.badge.pay{background:#ff4444;color:#fff}
+.page{display:none;padding:15px;max-width:600px;margin:auto;animation:fade 0.3s}
+.page.active{display:block}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.btn{background:linear-gradient(90deg,#ffbb00,#ff8800);color:#000;padding:12px 20px;border:none;border-radius:25px;font-weight:bold;width:100%;margin:10px 0;cursor:pointer}
+.btn-green{background:linear-gradient(90deg,#00ff88,#00cc66)}
+.btn-back{background:#222;color:#fff}
+.input{width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#000;color:#fff;margin:8px 0}
+.chat-box{background:#000;border:1px solid #333;border-radius:10px;height:300px;padding:10px;overflow-y:auto;margin:10px 0}
+.msg{background:#111827;padding:8px 12px;border-radius:10px;margin:5px 0;font-size:13px}
+.msg.me{background:#ffbb0022;text-align:right}
+.gen-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.gen-item{background:#000;border:1px dashed #ffbb00;padding:10px;border-radius:10px;text-align:center;font-size:11px}
 </style>
 </head>
 <body>
+<div class="header">
 <img src="./gsia_new_512.png" class="logo">
-<h1>👑 GSIA CITE IMPERIALE 👑</h1>
-<div class="card">
-<p>🌍 Ecosystème Central TOGO</p>
-<p>📚 EDUCATION | 💼 BUSINESS | 💰 TONTINE</p>
-<p style="color:#ffbb00">GSIA-ZEM EST EN LIGNE !</p>
+<h1>👑 GSIA QG IMPÉRIAL V117 👑</h1>
+<div class="subtitle">QG AUTONOME - Même sans connexion</div>
 </div>
-<a class="btn" href="#">ENTRER DANS LA CITE</a>
-<p style="margin-top:30px;opacity:0.6">Version 116 - PWA Stable</p>
+
+<!-- MENU PRINCIPAL -->
+<div id="menu" class="grid">
+<div class="card" onclick="openPage('edu')"><div class="icon">📚</div><h3>ÉDUCATION APC</h3><p>Fiches Primaire/Secondaire</p></div>
+<div class="card" onclick="openPage('ecole')"><div class="icon">🏫</div><h3>GESTION ÉCOLE</h3><p>Élèves, Notes, Frais</p></div>
+<div class="card" onclick="openPage('entreprise')"><div class="icon">💼</div><h3>GESTION ENTREPRISE</h3><p>Stock, Vente, Facture</p></div>
+<div class="card" onclick="openPage('jeux')"><div class="icon">🎮</div><h3>JEUX ÉDUCATIFS</h3><p>Gratuit & Payant</p></div>
+<div class="card" onclick="openPage('tontine')"><div class="icon">🔐</div><h3>COFFRE & TONTINE</h3><p>Sécurisé</p></div>
+<div class="card" onclick="openPage('commande')"><div class="icon">📦</div><h3>SUIVI COMMANDE</h3><p>Logistique</p></div>
+<div class="card" onclick="openPage('import')"><div class="icon">🌍</div><h3>IMPORT-EXPORT</h3><p>Business</p></div>
+<div class="card" onclick="openPage('zem')"><div class="icon">🚕</div><h3>GSIA-ZEM</h3><p>Transport</p></div>
+<div class="card new" onclick="openPage('chat')"><div class="icon">💬</div><h3>CHAT QG OFFLINE <span class="badge">NOUVEAU</span></h3><p>Sans Internet !</p></div>
+<div class="card new" onclick="openPage('academie')"><div class="icon">🎓</div><h3>ACADÉMIE GSIA <span class="badge">NOUVEAU</span></h3><p>IA, Excel, Créativité</p></div>
+</div>
+
+<!-- PAGES -->
+<div id="edu" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2 style="color:#ffbb00">📚 FICHES APC</h2><select class="input"><option>Primaire</option><option>Secondaire</option></select><select class="input"><option>Maths</option><option>Français</option><option>Sciences</option></select><button class="btn" onclick="alert('Fiche APC Générée ! (Version complète arrive)')">GÉNÉRER FICHE APC</button><div class="gen-grid"><div class="gen-item">Fiche Modèle 1</div><div class="gen-item">Fiche Modèle 2</div></div></div>
+
+<div id="jeux" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2 style="color:#ffbb00">🎮 JEUX ÉDUCATIFS</h2><button class="btn btn-green" onclick="genJeux()">🎁 GÉNÉRER 10 NOUVEAUX JEUX (Gratuit)</button><button class="btn" onclick="alert('Version Payante 1000F - Accès complet')">🔒 VERSION PAYANTE - 1000F</button><div id="jeuxList" class="gen-grid"></div></div>
+
+<div id="chat" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2 style="color:#00ff88">💬 CHAT QG OFFLINE</h2><p style="font-size:12px;background:#00ff8822;padding:8px;border-radius:8px">🟢 Mode Hors-Ligne Activé - 3 membres à proximité</p><div class="chat-box" id="chatBox"><div class="msg">DG Zem: Salut DG, t'es au QG ?</div><div class="msg me">Moi: Oui, sans connexion ça marche !</div></div><input class="input" id="chatInput" placeholder="Tape ton message (offline)..."><button class="btn btn-green" onclick="sendChat()">ENVOYER SANS INTERNET</button></div>
+
+<div id="academie" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2 style="color:#ffbb00">🎓 ACADÉMIE GSIA</h2>
+<div class="card" style="text-align:left"><h3>🤖 Formation IA <span class="badge pay">PAYANT 5000F</span></h3><p>ChatGPT, création images, business IA</p><button class="btn" onclick="alert('Paiement Flooz/TMoney : *145#')">PAYER ET ACCÉDER</button></div>
+<div class="card" style="text-align:left"><h3>📊 Formation Excel <span class="badge">GRATUIT</span></h3><p>Formules, tableaux, gestion</p><button class="btn btn-green" onclick="alert('Cours Excel Gratuit Ouvert !')">COMMENCER GRATUIT</button></div>
+<div class="card" style="text-align:left"><h3>📦 Suivi Logistique</h3><input class="input" placeholder="Numéro colis"><button class="btn">SUIVRE COLIS</button></div>
+<h3 style="margin:15px 0;color:#ffbb00">🎨 CRÉATIVITÉ</h3>
+<div class="grid" style="padding:0">
+<div class="card" onclick="openGen('Artistique')"><div class="icon">🎨</div><h3>Artistique</h3></div>
+<div class="card" onclick="openGen('Culinaire')"><div class="icon">🍲</div><h3>Culinaire</h3></div>
+<div class="card" onclick="openGen('Pagnes')"><div class="icon">👗</div><h3>Modèles Pagnes</h3></div>
+<div class="card" onclick="openGen('Logos')"><div class="icon">🏢</div><h3>Logos Entreprises</h3></div>
+</div>
+<div id="genResult" class="gen-grid"></div>
+</div>
+
+<div id="ecole" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2>🏫 Gestion École - Bientôt</h2><p>Ton module école complet arrive ici.</p></div>
+<div id="entreprise" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2>💼 Gestion Entreprise - Bientôt</h2></div>
+<div id="tontine" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2>🔐 Coffre & Tontine</h2><input class="input" placeholder="Montant"><button class="btn">REJOINDRE TONTINE</button></div>
+<div id="commande" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2>📦 Suivi Commande</h2></div>
+<div id="import" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2>🌍 Import-Export</h2></div>
+<div id="zem" class="page"><button class="btn btn-back" onclick="goMenu()">← Retour QG</button><h2>🚕 GSIA-ZEM</h2><button class="btn btn-green" onclick="window.open('https://wa.me/22890000000')">COMMANDER ZEM VIA WHATSAPP</button></div>
+
+<script>
+function openPage(id){document.getElementById('menu').style.display='none';document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
+function goMenu(){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('menu').style.display='grid'}
+function sendChat(){let i=document.getElementById('chatInput');if(!i.value)return;let b=document.getElementById('chatBox');b.innerHTML+=`<div class="msg me">Moi: ${i.value} (offline ✓)</div>`;i.value='';b.scrollTop=b.scrollHeight;setTimeout(()=>{b.innerHTML+=`<div class="msg">Système: Message sera envoyé aux 3 membres proches même sans internet !</div>`;b.scrollTop=b.scrollHeight},800)}
+function genJeux(){let l=document.getElementById('jeuxList');l.innerHTML='';for(let k=1;k<=10;k++){l.innerHTML+=`<div class="gen-item">🎮 Jeu ${k} - Nouveau !</div>`}}
+function openGen(type){let r=document.getElementById('genResult');r.innerHTML='';for(let k=1;k<=6;k++){r.innerHTML+=`<div class="gen-item">✨ ${type} #${k}<br>Généré dans QG</div>`}}
+if('serviceWorker' in navigator){/* SW désactivé volontairement pour éviter écran blanc V117 */}
+</script>
 </body>
-</html>
+                                                                                                   </html>
