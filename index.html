@@ -3,88 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GSIA ECOSYSTEME CENTRAL</title>
+<title>GSIA CITE IMPERIALE - 8 PORTAILS</title>
+<script src="https://cdn.fedapay.com/checkout.js"></script>
 <style>
-body{background:#070A12;color:white;margin:0;font-family:Arial;text-align:center}
-.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:80vh;padding:20px;background:radial-gradient(circle at center, #1a2a0a 0%, #070A12 70%)}
-.hero img{width:220px;height:220px;border-radius:50%;border:4px solid #ffbb00;box-shadow:0 0 40px gold}
-h1{color:#ffbb00;margin-top:20px;font-size:28px}
-.btn-gold{background:linear-gradient(90deg,#ffbb00,#ff8c00);color:#000;padding:15px 35px;border-radius:30px;font-weight:900;text-decoration:none;display:inline-block;margin-top:20px}
-.nav{display:flex;gap:8px;padding:12px;justify-content:center;background:#0e1424;position:sticky;top:0;z-index:10}
-.nav a{padding:8px 16px;background:#1e2a3a;color:white;border-radius:20px;text-decoration:none;font-size:14px}
+body{background:#070A12;color:white;margin:0;font-family:Arial}
+.hero{flex-direction:column;align-items:center;justify-content:center;min-height:60vh;display:flex;padding:20px;background:radial-gradient(circle at center,#12210a 0%,#070A12 70%)}
+.hero img{width:170px;height:170px;border-radius:50%;border:3px solid #ffbb00;box-shadow:0 0 30px gold}
+.btn-gold{background:linear-gradient(90deg,#ffbb00,#ff8c00);color:#000;padding:13px 30px;border-radius:30px;font-weight:900;text-decoration:none;margin-top:15px;display:inline-block}
+.nav{position:sticky;top:0;z-index:20;background:#0e1424;display:flex;gap:6px;padding:10px;overflow:auto}
+.nav a{background:#1a2332;color:white;padding:8px 12px;border-radius:20px;text-decoration:none;font-size:11px;white-space:nowrap}
 .nav a.active{background:#ffbb00;color:black;font-weight:900}
-.section{padding:20px;max-width:600px;margin:0 auto;text-align:left}
-.hero-text{padding:30px 20px;text-align:center;background:linear-gradient(180deg,#111820 0%,#070A12 100%);border-bottom:2px solid #ffbb0033}
-.hero-text h2{color:#ffbb00;font-size:26px;margin-bottom:10px}
-.hero-text p{line-height:1.7;color:#ddd;font-size:15px}
-.card{background:#111820;margin:14px 0;padding:18px;border-radius:16px;border:1px solid #223322}
-.badge{background:#ffbb00;color:black;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900}
-.btn-w{background:#25D366;color:white;width:100%;padding:14px;border-radius:12px;font-weight:900;display:block;text-align:center;text-decoration:none;margin-top:10px}
+.motiv{padding:25px 20px;text-align:center;background:linear-gradient(180deg,#111820,#070A12);border-bottom:2px solid #ffbb0033}
+.section{max-width:700px;margin:0 auto;padding:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.portail{background:linear-gradient(135deg,#111a2e,#0e1424);border:1px solid #223322;border-radius:16px;padding:14px;text-align:left;cursor:pointer;transition:0.2s}
+.portail:hover{border-color:#ffbb00;transform:translateY(-2px)}
+.portail h3{margin:6px 0;font-size:14px}
+.portail p{font-size:11px;color:#aaa;margin:0;line-height:1.4}
+.badge{font-size:9px;padding:4px 8px;border-radius:20px;font-weight:900}
+.detail-card{display:none;background:#0a1020;border:1px solid #ffbb0050;border-radius:16px;padding:16px;margin:14px 0;text-align:left}
+.detail-card.active{display:block}
+.btn-pay{width:100%;padding:12px;border-radius:10px;font-weight:900;border:none;display:block;text-align:center;text-decoration:none;margin-top:8px;cursor:pointer;font-size:12px}
+.btn-green{background:linear-gradient(90deg,#00e676,#00c853);color:black}
+.btn-blue{background:linear-gradient(90deg,#2979ff,#2962ff);color:white}
+.btn-yellow{background:linear-gradient(90deg,#ffbb00,#ff8c00);color:black}
+.btn-orange{background:linear-gradient(90deg,#ff9100,#ff6d00);color:black}
+.price{color:#ffbb00;font-weight:900;margin:8px 0}
 </style>
 </head>
 <body>
 
 <div class="hero" id="accueil">
 <img src="gsia_new_512.png?v=3">
-<h1>GSIA STUDIO TOGO</h1>
-<p>QG Officiel - DG TRAORE</p>
-<a href="#ecosysteme" class="btn-gold">Continuer →</a>
+<h1 style="color:#ffbb00;margin:10px 0 0 0;font-size:22px">GSIA STUDIO TOGO</h1>
+<p style="font-size:11px;color:#aaa">QG Officiel - DG TRAORÉ ABOUDOULAYE</p>
+<a href="#cite" class="btn-gold">Continuer → Entrer dans la Cité</a>
 </div>
 
-<div class="nav">
-<a class="active" href="#accueil">Accueil</a>
-<a href="#hopital">Hôpital</a>
-<a href="#ecole">École</a>
-<a href="#business">Business</a>
-</div>
-
-<div class="hero-text" id="ecosysteme">
-<h2>GSIA ÉCOSYSTÈME CENTRAL</h2>
-<p><b>Bienvenue chez toi DG. GSIA n'est pas une boutique, c'est une cité.</b></p>
-<p style="margin-top:15px">
+<div class="motiv" id="cite">
+<h2 style="color:#ffbb00;margin:0">GSIA ÉCOSYSTÈME CENTRAL</h2>
+<p style="font-size:13px;line-height:1.7;margin-top:12px"><b>Bienvenue chez toi DG. GSIA n'est pas une boutique, c'est une cité.</b><br><br>
 Tu es malade, on te soigne.<br>
 Tu veux apprendre, on t'enseigne.<br>
 Tu veux saisir des opportunités d'affaires, on te guide.<br>
-Tu veux travailler, on te lance.
-</p>
-<p style="color:#ffbb00;font-weight:900;margin-top:15px">Éducation • Santé • Business • Finance - Tout ton avenir en un seul endroit.</p>
+Tu veux travailler, on te lance.</p>
+<p style="color:#ffbb00;font-size:11px;font-weight:900">Éducation • Santé • Business • Finance • Livraison</p>
+<a href="#portails" class="btn-gold" style="padding:10px 20px;font-size:12px;margin-top:10px">VOIR LES 8 PORTAILS →</a>
+</div>
+
+<div class="nav" id="portails">
+<a class="active" href="#cite">Cité</a>
+<a href="#p1">Fiches</a>
+<a href="#p2">Jeux</a>
+<a href="#p3">École</a>
+<a href="#p4">Tontine</a>
+<a href="#p5">Business</a>
+<a href="#p6">Commande</a>
+<a href="#p7">Vidéos</a>
+<a href="#p8">Gozem</a>
 </div>
 
 <div class="section">
-<div class="card" id="hopital">
-<span class="badge">SANTÉ</span>
-<h3>🏥 GSIA HÔPITAL</h3>
-<p style="color:#aaa;font-size:13px">Consultations • Pharmacie • Urgences</p>
-<a href="https://wa.me/22892817593?text=Bonjour%20GSIA%20HOPITAL%20RDV" class="btn-w">📲 RDV : 92 81 75 93</a>
-<a href="https://wa.me/22898221495?text=URGENCE%20GSIA" class="btn-w" style="background:#e11d48">🚨 URGENCE : 98 22 14 95</a>
+
+<!-- GRILLE DES 8 PORTAILS -->
+<div class="grid">
+<div class="portail" onclick="openPortail('p1')"><span class="badge" style="background:#ffbb0020;color:#ffbb00">PORTAIL 1</span><h3>📚 FICHES PÉDAGO</h3><p>Primaire APC + Collège + Lycée. Génération 30s</p></div>
+<div class="portail" onclick="openPortail('p2')"><span class="badge" style="background:#00e67620;color:#00e676">PORTAIL 2</span><h3>🎮 JEUX ÉDUCATIFS</h3><p>Gratuit + Payant. Génère 10 nouveaux jeux</p></div>
+<div class="portail" onclick="openPortail('p3')"><span class="badge" style="background:#2979ff20;color:#82b1ff">PORTAIL 3</span><h3>🏫 GESTION ÉCOLE</h3><p>Écolage FedaPay + Suivi parents maison</p></div>
+<div class="portail" onclick="openPortail('p4')"><span class="badge" style="background:#ff910020;color:#ffab40">PORTAIL 4</span><h3>🔐 COFFRE & TONTINE</h3><p>Rotative 12 pers. 5% DG. 10 000F/tour</p></div>
+<div class="portail" onclick="openPortail('p5')"><span class="badge" style="background:#00e67620;color:#00e676">PORTAIL 5</span><h3>💼 ENTREPRISE & BUSINESS LINK</h3><p>Togo/Afrique/Monde. Commission 2000F</p></div>
+<div class="portail" onclick="openPortail('p6')"><span class="badge" style="background:#1e2a3a;color:white">PORTAIL 6</span><h3>📦 SUIVI COMMANDE</h3><p>Suivi livraison temps réel</p></div>
+<div class="portail" onclick="openPortail('p7')"><span class="badge" style="background:#e11d4820;color:#ff6b8a">PORTAIL 7</span><h3>🎥 VIDÉOS & EXPO</h3><p>Vidéos + Expo commerçants Manioc/Karité</p></div>
+<div class="portail" onclick="openPortail('p8')"><span class="badge" style="background:#ffbb00;color:black">PORTAIL 8 NOUVEAU</span><h3>🛵 GOZEM+JUMIA+GLOVO</h3><p>Livraison & E-commerce Cité</p></div>
 </div>
 
-<div class="card" id="ecole">
-<span class="badge">ÉDUCATION</span>
-<h3>🎓 GSIA ÉCOLE & FORMATIONS</h3>
-<p style="color:#aaa;font-size:13px">Informatique • Design • Business<br>Certificat officiel GSIA</p>
-<a href="https://wa.me/22892817593?text=Je%20veux%20apprendre%20GSIA" class="btn-w" style="background:#ffbb00;color:black">Je veux apprendre → 92 81 75 93</a>
+<!-- DETAILS PORTAIL 1 -->
+<div class="detail-card active" id="p1">
+<h3>📚 PORTAIL 1 : FICHES PÉDAGOGIQUES APC</h3>
+<p style="font-size:12px;color:#aaa">Message officiel Direction : Je suis ARIZIKI BAH, DG de GSIA STUDIO. Depuis mon bureau, je vous montre comment créer vos fiches APC en 30 secondes.</p>
+<div style="background:white;color:black;border-radius:12px;padding:12px;margin-top:10px">
+<b>Primaire APC • Collège • Lycée</b><br>
+<span style="font-size:11px">CP1, CM2, 6ème, Terminale - Maths, Français, ECM, Sciences</span><br><br>
+<button class="btn-pay btn-yellow" onclick="payFedapay(1000,'Fiches Pedagogiques')">Lancer Démo 30s (Gratuit)</button>
+<button class="btn-pay btn-green" onclick="payFedapay(2000,'Pack Fiches 2000F')">Créer ma Fiche en 30s - 2000F FedaPay</button>
+<button class="btn-pay btn-blue">Voir fiches modèles</button>
+</div>
 </div>
 
-<div class="card" id="business">
-<span class="badge">OPPORTUNITÉS</span>
-<h3>💼 GSIA BUSINESS</h3>
-<p style="color:#aaa;font-size:13px">Saisir des opportunités d'affaires<br>On te guide vers l'autonomie</p>
-<a href="https://wa.me/22892817593?text=Opportunites%20Business%20GSIA" class="btn-w" style="background:#3b82f6">Saisir opportunité → 92 81 75 93</a>
+<!-- DETAILS PORTAIL 2 -->
+<div class="detail-card" id="p2">
+<h3>🎮 PORTAIL 2 : JEUX ÉDUCATIFS</h3>
+<p style="font-size:12px;color:#aaa">Version gratuite et payante avec génération automatique</p>
+<div style="background:#111;padding:12px;border-radius:12px">
+<p>🎯 10 nouveaux jeux générés chaque mois par IA GSIA</p>
+<p class="price">Gratuit : 3 jeux / Payant : 2000F/mois = 10 jeux illimités</p>
+<button class="btn-pay btn-green" onclick="payFedapay(2000,'Jeux Educatifs 10 jeux')">Générer 10 nouveaux jeux - 2000F FedaPay</button>
+<button class="btn-pay" style="background:#1e2a3a;color:white">Jouer version gratuite</button>
+</div>
 </div>
 
-<div class="card">
-<span class="badge">TRAVAIL</span>
-<h3>🚀 GSIA EMPLOI</h3>
-<p style="color:#aaa;font-size:13px">Tu veux travailler, on te lance.<br>Rejoins l'équipe de la Cité</p>
-<a href="https://wa.me/22898221495?text=Je%20veux%20travailler%20GSIA" class="btn-w" style="background:#1e2a3a">Je veux travailler → 98 22 14 95</a>
+<!-- DETAILS PORTAIL 3 -->
+<div class="detail-card" id="p3">
+<h3>🏫 PORTAIL 3 : GESTION ÉCOLE - La Lumière Lomé</h3>
+<p style="font-size:11px;color:#00e676">SCEAU FEDAPAY SÉCURISÉ - Direction BAH ARIZIKI</p>
+<div style="background:white;color:black;border-radius:12px;padding:12px">
+<b>GSIA ÉCOLE - Abonnement 5000F/mois</b>
+<p style="font-size:11px;color:#555">Écolage payé par FedaPay + Suivi parents de la progression de leurs enfants même à la maison. Système académique complet.</p>
+<p class="price" style="color:#2979ff">5000F/mois</p>
+<button class="btn-pay btn-blue" onclick="payFedapay(5000,'Ecole La Lumiere')">Payer Écolage 5000F - FedaPay</button>
+<button class="btn-pay" style="background:white;border:1px solid #2979ff;color:#2979ff">MODE DIRECTION</button>
+<button class="btn-pay" style="background:#1e2a3a;color:white">MODE PARENT - Voir progression enfant</button>
+<a href="https://wa.me/22892817593?text=Inscription%20Ecole%20La%20Lumiere" style="display:block;text-align:center;margin-top:8px;color:#25D366;font-size:12px">WhatsApp Inscription : 92 81 75 93</a>
+</div>
 </div>
 
-<div class="card" style="text-align:center;border:1px dashed #ffbb00">
+<!-- DETAILS PORTAIL 4 -->
+<div class="detail-card" id="p4">
+<h3>🔐 PORTAIL 4 : COFFRE FORT & TONTINE</h3>
+<p style="font-size:12px">Tontine Solidarité Digitale FedaPay - Commission DG 5%</p>
+<div style="background:#00000060;padding:12px;border-radius:12px;border:1px solid #ff910050">
+<b>Tontine Solidarité Enseignants Lomé</b><br>
+<span style="font-size:11px">12 Membres (mensuelle) - Tour Actuel : Mois #3 sur 12</span>
+<p class="price">10 000 FCFA / tour</p>
+<button class="btn-pay btn-orange" onclick="payFedapay(10000,'Tontine 10000')">PAYER COTISATION 10 000F - FedaPay (Flooz/TMoney)</button>
+<button class="btn-pay" style="background:#1e2a3a;color:white">Rejoindre avec un code</button>
+<button class="btn-pay btn-green">+ Créer une tontine</button>
+</div>
+</div>
+
+<!-- DETAILS PORTAIL 5 -->
+<div class="detail-card" id="p5">
+<h3>💼 PORTAIL 5 : GESTION ENTREPRISE & BUSINESS LINK</h3>
+<p style="font-size:11px;color:#00e676">GSIA BUSINESS • SCEAU FEDAPAY ACTIF • LOMÉ - pk_live_UKrZmm...</p>
+<div style="background:#111;padding:12px;border-radius:12px">
+<b>MODE MON ENTREPRISE (3000F/mois)</b><br>
+<span style="font-size:11px;color:#aaa">Version africaine de Sage - Compta, Facturation FedaPay, Stock, Paie</span>
+<button class="btn-pay btn-green" onclick="payFedapay(3000,'Entreprise 3000')">Renouveler Abonnement 3000F FedaPay</button>
+<br>
+<b>MODE BUSINESS LINK (MATCH DANGOTE) - 2000F par contact</b><br>
+<span style="font-size:11px;color:#aaa">LinkedIn des affaires Afrique+Europe. Commission DG 2000F</span>
+<div style="background:white;color:black;border-radius:10px;padding:10px;margin:8px 0">
+<b>10 Tonnes Manioc / mois - 150F/kg</b><br>
+<span style="font-size:10px">Coopérative Paysanne Zio - LOMÉ</span><br>
+<button class="btn-pay btn-blue" onclick="payFedapay(2000,'Contact Manioc')">Contacter - 2000F FedaPay</button>
+</div>
+<div style="background:white;color:black;border-radius:10px;padding:10px">
+<b>Beurre Karité Bio 100% - 2500F/kg</b><br>
+<span style="font-size:10px">Groupement Féminin Kara</span><br>
+<button class="btn-pay btn-blue" onclick="payFedapay(2000,'Contact Karite')">Contacter - 2000F FedaPay</button>
+</div>
+</div>
+</div>
+
+<!-- DETAILS PORTAIL 6 -->
+<div class="detail-card" id="p6">
+<h3>📦 PORTAIL 6 : SUIVI COMMANDE</h3>
+<div style="background:#111;padding:12px;border-radius:12px">
+<p style="font-size:12px">Entrez votre code commande pour suivre</p>
+<input placeholder="Ex: GSIA-2026-001" style="width:100%;padding:10px;border-radius:8px;border:none;margin:8px 0">
+<button class="btn-pay btn-yellow">Suivre ma commande</button>
+<p style="font-size:11px;color:#aaa;margin-top:10px">Statut : Préparation → En route → Livré (comme Gozem)</p>
+</div>
+</div>
+
+<!-- DETAILS PORTAIL 7 -->
+<div class="detail-card" id="p7">
+<h3>🎥 PORTAIL 7 : VIDÉOS & EXPO COMMERÇANTS</h3>
+<div style="background:#111;padding:12px;border-radius:12px">
+<p style="font-size:12px">Vidéos illustratives + Exposition produits locaux</p>
+<button class="btn-pay" style="background:#e11d48;color:white">▶ Voir vidéos GSIA</button>
+<div style="background:white;color:black;border-radius:10px;padding:10px;margin-top:10px">
+<b>Expo : Coopérative Zio - Manioc</b><br>
+<button class="btn-pay btn-blue">Voir stand virtuel</button>
+</div>
+</div>
+</div>
+
+<!-- DETAILS PORTAIL 8 -->
+<div class="detail-card" id="p8">
+<h3>🛵 PORTAIL 8 NOUVEAU : GOZEM + JUMIA + GLOVO INTÉGRÉ</h3>
+<p style="font-size:12px;color:#ffbb00">Nouveau projet Cité Impériale - En construction</p>
+<div style="background:linear-gradient(135deg,#ffbb0020,#ff8c0020);padding:12px;border-radius:12px;border:1px solid #ffbb00">
+<b>Livraison rapide + E-commerce + Courses</b><br>
+<span style="font-size:11px;color:#aaa">Intégration Gozem pour livraison, Jumia pour boutique en ligne, Glovo pour courses alimentaires. Tous les commerçants de la Cité livrables à domicile à Lomé.</span>
+<p class="price">Commission livraison : 500F</p>
+<button class="btn-pay btn-yellow" onclick="payFedapay(500,'Livraison Gozem')">Commander livraison - 500F FedaPay</button>
+<button class="btn-pay" style="background:#1e2a3a;color:white">Devenir livreur Gozem GSIA</button>
+<button class="btn-pay" style="background:#25D366;color:white" onclick="window.open('https://wa.me/22898221495?text=Gozem%20GSIA')">WhatsApp Gozem : 98 22 14 95</button>
+</div>
+</div>
+
+<div style="text-align:center;padding:20px;border:1px dashed #ffbb00;border-radius:16px;margin-top:20px">
 <h3 style="color:#ffbb00">📞 QG CENTRAL</h3>
-<p>Lomé, TOGO<br><b>92 81 75 93 / 98 22 14 95</b></p>
-</div>
+<p style="font-size:12px">FedaPay LIVE : pk_live_UKrZmmi0...<br>Traoré Aboudoulaye<br><b>92 81 75 93 / 98 22 14 95</b><br>Aboudoulayeltraore0770@gmail.com<br><br>TMoney (*145#) / Flooz (*155#) / Carte Visa</p>
 </div>
 
+</div>
+
+<script>
+function openPortail(id){
+document.querySelectorAll('.detail-card').forEach(c=>c.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+function payFedapay(montant, desc){
+let widget = FedaPay.init({
+public_key: 'pk_live_UKrZmm...',
+transaction: {amount: montant, description: desc},
+customer: {email: 'Aboudoulayeltraore0770@gmail.com', lastname: 'TRAORE', firstname: 'Aboudoulaye'},
+onComplete: function(r){ if(r.reason==='CHECKOUT_COMPLEMENTED'){ alert('Paiement '+montant+'F réussi pour '+desc+' !'); window.open('https://wa.me/22892817593?text=Jai%20paye%20'+montant+'F%20'+encodeURIComponent(desc)); }}
+});
+widget.open();
+}
+</script>
 </body>
-</html>
+                                                                                                                                                             </html>
