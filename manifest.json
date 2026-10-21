@@ -1,0 +1,23 @@
+{
+  "name": "GSIA CITE IMPERIALE",
+  "short_name": "GSIA-ZEM",
+  "description": "Ecosystème Central Togo - Education Business Tontine",
+  "start_url": "/gsia_empire/",
+  "display": "standalone",
+  "background_color": "#070A12",
+  "theme_color": "#ffbb00",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "gsia_new_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "gsia_new_512.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
