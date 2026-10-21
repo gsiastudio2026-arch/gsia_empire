@@ -2,49 +2,64 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>GSIA STUDIO TOGO - QG Officiel</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#0a0e14;color:#fff}
-.top{background:linear-gradient(90deg,#ff8c00,#ffb700);color:#000;text-align:center;padding:7px;font-weight:900;font-size:11px}
-.head{padding:16px;background:#111820;border-bottom:2px solid #ffb700;display:flex;justify-content:space-between;align-items:center}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0e14;color:#fff;font-family:system-ui}
+.top{background:linear-gradient(90deg,#ffb700,#ff8c00);color:#000;padding:6px;text-align:center;font-size:11px;font-weight:900}
+.head{padding:16px;background:#111820;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222}
 .logo{display:flex;gap:10px;align-items:center}
-.icon{width:40px;height:40px;background:#ffb700;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900}
-h1{font-size:15px;color:#ffb700}
-.nav{display:flex;gap:7px;padding:10px;overflow:auto;background:#0f1720}
-.nav a{padding:7px 14px;background:#1e2a3a;color:#aaa;border-radius:20px;text-decoration:none;font-size:11px;font-weight:700}
-.nav a.active{background:#ffb700;color:#000}
-.card{margin:12px;background:#121c2a;border:1px solid #ffb70044;border-radius:14px;padding:14px}
-.badge{padding:4px 10px;border-radius:20px;font-size:10px;font-weight:700;display:inline-block}
-.bg-green{color:#00ff88;border:1px solid #00ff88;background:#00ff8822}
-.btn{width:100%;padding:13px;border-radius:10px;border:none;font-weight:900;margin-top:9px;font-size:13px}
+.icon{width:40px;height:40px;border-radius:50%;object-fit:cover;display:block;background:#000}
+h1{font-size:15px;color:#ffb700;line-height:1.1}
+h1 span{font-size:10px;color:#888;display:block}
+.badge{padding:4px 10px;border-radius:20px;font-size:10px;font-weight:900}
+.bg-green{color:#00ff88;border:1px solid #00ff88}
+.nav{display:flex;gap:7px;padding:10px;overflow:auto}
+.nav a{padding:7px 14px;background:#1e2a3a;color:#ffb700;border-radius:20px;font-size:12px;text-decoration:none;white-space:nowrap}
+.nav a.active{background:#ffb700;color:#000;font-weight:900}
+.card{background:#111820;margin:10px;padding:14px;border-radius:14px;border:1px solid #1e2a3a}
+.btn{width:100%;padding:13px;border-radius:12px;border:0;font-weight:900;margin-top:8px}
 .btn-gold{background:linear-gradient(90deg,#ffb700,#ff8c00);color:#000}
-.btn-dark{background:#1e2a3a;color:#ffb700;border:1px solid #ffb700}
+.btn-dark{background:#1e2a3a;color:#ffb700}
 .btn-green{background:#25D366;color:#fff}
+.profile-icon{width:50px;height:50px;border-radius:14px;object-fit:cover;display:block}
 </style>
 </head>
 <body>
 <div class="top">NOUVEAUTÉ 2026-2027 - PROGRAMMES OFFICIELS MIS À JOUR</div>
 <div class="head">
-<div class="logo"><div class="icon">GS</div><div><h1>GSIA STUDIO TOGO</h1><p style="font-size:9px;opacity:.6">Éducation • Formation • Créativité</p></div></div>
+<div class="logo">
+<img src="ta-icon-perfect-512.png" class="icon" alt="GSIA">
+<h1>GSIA STUDIO TOGO<span>Education Formation Creativite</span></h1>
+</div>
 <div class="badge bg-green">Admin</div>
 </div>
-<div class="nav"><a class="active">Accueil</a><a>Primaire APC</a><a>Collège</a><a>Lycée</a><a href="https://gsiastudio2026-arch.github.io/BUTTODRA-OFFICIEL/">BUTTODRA</a></div>
+<div class="nav"><a class="active">Accueil</a><a>Primaire APC</a><a>Collège</a><a>Lycée</a><a>Galerie</a></div>
 <div class="card">
-<div style="font-size:11px;opacity:.7">🟢 App installée • Mode Hors-Ligne Actif</div>
-<div style="display:flex;gap:12px;margin-top:14px;align-items:center">
-<div style="width:50px;height:50px;background:#ffb700;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900">TA</div>
-<div><div style="font-weight:900">Bienvenue Traoré Aboudoulaye</div><div class="badge bg-green" style="margin-top:5px">Admin GSIA STUDIO</div><div style="font-size:11px;margin-top:6px;color:#00ff88">● FedaPay Live Actif</div><div style="font-size:11px">Tél: <b style="color:#ffb700">+228 98 22 14 95</b></div></div>
+<div style="font-size:11px;opacity:.7">Application GSIA STUDIO TOGO (TA) installée sur cet appareil</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<span class="badge bg-green">Mode Hors-Ligne Actif</span>
+<span style="background:#ffb700;color:#000" class="badge">Standalone PWA</span>
 </div>
 </div>
 <div class="card">
-<h3 style="color:#ffb700;font-size:13px;margin-bottom:8px">PORTAILS DE L'EMPIRE</h3>
-<button class="btn btn-gold" onclick="window.open('https://gsiastudio2026-arch.github.io/BUTTODRA-OFFICIEL/','_blank')">👑 ENTRER DANS BUTTODRA OFFICIEL</button>
-<button class="btn btn-dark">📚 Primaire APC 2026</button>
-<button class="btn btn-dark">🎓 Collège & Lycée</button>
-<button class="btn btn-green" onclick="window.open('https://wa.me/22898221495','_blank')">💬 WHATSAPP DG</button>
+<div style="display:flex;gap:12px;align-items:center">
+<img src="ta-icon-perfect-512.png" class="profile-icon" alt="TA">
+<div><div style="font-weight:900">Bienvenue Traoré Aboudoulaye</div><div style="font-size:11px;opacity:.7">Admin GSIA STUDIO • FedaPay Live Actif (Production)</div></div>
 </div>
-<div style="text-align:center;padding:15px;font-size:9px;opacity:.3">GSIA STUDIO TOGO • Lomé</div>
+<div style="margin-top:12px;font-size:12px;line-height:1.6">
+Tel: +228 92 47 63 21<br>Email: gsiastudio2026@gmail.com<br>Bibliothèque: 0 fiche (Compte vide)
+</div>
+<button class="btn btn-gold">Tableau de Bord</button>
+</div>
+<div class="card">
+<h3 style="color:#ffb700;font-size:13px;margin-bottom:8px">Accès Rapide</h3>
+<button class="btn btn-dark">📚 Primaire APC</button>
+<button class="btn btn-dark">🎓 Collège</button>
+<button class="btn btn-dark">🎓 Lycée Général & Technique</button>
+<button class="btn btn-green" onclick="window.open('https://wa.me/22892476321')">💬 WhatsApp Direct</button>
+</div>
+<div style="text-align:center;padding:16px;font-size:10px;opacity:.5">© 2026 GSIA STUDIO TOGO - Version QG Officielle</div>
 </body>
 </html>
