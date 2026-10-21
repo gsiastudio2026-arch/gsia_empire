@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GSIA CITE IMPERIALE - 8 PORTAILS</title>
+<title>GSIA CITE IMPERIALE - SECURISE</title>
 <script src="https://cdn.fedapay.com/checkout.js"></script>
 <style>
 body{background:#070A12;color:white;margin:0;font-family:Arial}
@@ -16,10 +16,10 @@ body{background:#070A12;color:white;margin:0;font-family:Arial}
 .motiv{padding:25px 20px;text-align:center;background:linear-gradient(180deg,#111820,#070A12);border-bottom:2px solid #ffbb0033}
 .section{max-width:700px;margin:0 auto;padding:12px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.portail{background:linear-gradient(135deg,#111a2e,#0e1424);border:1px solid #223322;border-radius:16px;padding:14px;text-align:left;cursor:pointer;transition:0.2s}
-.portail:hover{border-color:#ffbb00;transform:translateY(-2px)}
-.portail h3{margin:6px 0;font-size:14px}
-.portail p{font-size:11px;color:#aaa;margin:0;line-height:1.4}
+.portail{background:linear-gradient(135deg,#111a2e,#0e1424);border:1px solid #223322;border-radius:16px;padding:14px;text-align:left;cursor:pointer}
+.portail:hover{border-color:#ffbb00}
+.portail h3{margin:6px 0;font-size:13px}
+.portail p{font-size:11px;color:#aaa;margin:0}
 .badge{font-size:9px;padding:4px 8px;border-radius:20px;font-weight:900}
 .detail-card{display:none;background:#0a1020;border:1px solid #ffbb0050;border-radius:16px;padding:16px;margin:14px 0;text-align:left}
 .detail-card.active{display:block}
@@ -36,7 +36,7 @@ body{background:#070A12;color:white;margin:0;font-family:Arial}
 <div class="hero" id="accueil">
 <img src="gsia_new_512.png?v=3">
 <h1 style="color:#ffbb00;margin:10px 0 0 0;font-size:22px">GSIA STUDIO TOGO</h1>
-<p style="font-size:11px;color:#aaa">QG Officiel - DG TRAORÉ ABOUDOULAYE</p>
+<p style="font-size:11px;color:#aaa">QG Officiel - DG TRAORÉ ABOUDOULAYE alias BAH ARIZIKI</p>
 <a href="#cite" class="btn-gold">Continuer → Entrer dans la Cité</a>
 </div>
 
@@ -47,7 +47,7 @@ Tu es malade, on te soigne.<br>
 Tu veux apprendre, on t'enseigne.<br>
 Tu veux saisir des opportunités d'affaires, on te guide.<br>
 Tu veux travailler, on te lance.</p>
-<p style="color:#ffbb00;font-size:11px;font-weight:900">Éducation • Santé • Business • Finance • Livraison</p>
+<p style="color:#ffbb00;font-size:11px;font-weight:900">Éducation • Santé • Business • Finance • Livraison GSIA-ZEM</p>
 <a href="#portails" class="btn-gold" style="padding:10px 20px;font-size:12px;margin-top:10px">VOIR LES 8 PORTAILS →</a>
 </div>
 
@@ -60,147 +60,125 @@ Tu veux travailler, on te lance.</p>
 <a href="#p5">Business</a>
 <a href="#p6">Commande</a>
 <a href="#p7">Vidéos</a>
-<a href="#p8">Gozem</a>
+<a href="#p8">GSIA-ZEM</a>
 </div>
 
 <div class="section">
 
-<!-- GRILLE DES 8 PORTAILS -->
 <div class="grid">
-<div class="portail" onclick="openPortail('p1')"><span class="badge" style="background:#ffbb0020;color:#ffbb00">PORTAIL 1</span><h3>📚 FICHES PÉDAGO</h3><p>Primaire APC + Collège + Lycée. Génération 30s</p></div>
-<div class="portail" onclick="openPortail('p2')"><span class="badge" style="background:#00e67620;color:#00e676">PORTAIL 2</span><h3>🎮 JEUX ÉDUCATIFS</h3><p>Gratuit + Payant. Génère 10 nouveaux jeux</p></div>
-<div class="portail" onclick="openPortail('p3')"><span class="badge" style="background:#2979ff20;color:#82b1ff">PORTAIL 3</span><h3>🏫 GESTION ÉCOLE</h3><p>Écolage FedaPay + Suivi parents maison</p></div>
-<div class="portail" onclick="openPortail('p4')"><span class="badge" style="background:#ff910020;color:#ffab40">PORTAIL 4</span><h3>🔐 COFFRE & TONTINE</h3><p>Rotative 12 pers. 5% DG. 10 000F/tour</p></div>
-<div class="portail" onclick="openPortail('p5')"><span class="badge" style="background:#00e67620;color:#00e676">PORTAIL 5</span><h3>💼 ENTREPRISE & BUSINESS LINK</h3><p>Togo/Afrique/Monde. Commission 2000F</p></div>
-<div class="portail" onclick="openPortail('p6')"><span class="badge" style="background:#1e2a3a;color:white">PORTAIL 6</span><h3>📦 SUIVI COMMANDE</h3><p>Suivi livraison temps réel</p></div>
-<div class="portail" onclick="openPortail('p7')"><span class="badge" style="background:#e11d4820;color:#ff6b8a">PORTAIL 7</span><h3>🎥 VIDÉOS & EXPO</h3><p>Vidéos + Expo commerçants Manioc/Karité</p></div>
-<div class="portail" onclick="openPortail('p8')"><span class="badge" style="background:#ffbb00;color:black">PORTAIL 8 NOUVEAU</span><h3>🛵 GOZEM+JUMIA+GLOVO</h3><p>Livraison & E-commerce Cité</p></div>
+<div class="portail" onclick="openPortail('p1')"><span class="badge" style="background:#ffbb0020;color:#ffbb00">PORTAIL 1</span><h3>📚 FICHES PÉDAGO</h3><p>Primaire APC + Collège + Lycée</p></div>
+<div class="portail" onclick="openPortail('p2')"><span class="badge" style="background:#00e67620;color:#00e676">PORTAIL 2</span><h3>🎮 JEUX ÉDUCATIFS</h3><p>Gratuit + Payant - 10 nouveaux jeux</p></div>
+<div class="portail" onclick="openPortail('p3')"><span class="badge" style="background:#2979ff20;color:#82b1ff">PORTAIL 3</span><h3>🏫 GESTION ÉCOLE</h3><p>Écolage FedaPay + Suivi parents</p></div>
+<div class="portail" onclick="openPortail('p4')"><span class="badge" style="background:#ff910020;color:#ffab40">PORTAIL 4</span><h3>🔐 COFFRE & TONTINE</h3><p>Rotative 12 pers. 5% DG</p></div>
+<div class="portail" onclick="openPortail('p5')"><span class="badge" style="background:#00e67620;color:#00e676">PORTAIL 5</span><h3>💼 ENTREPRISE & BUSINESS LINK</h3><p>Togo/Afrique/Monde 2000F/MATCH</p></div>
+<div class="portail" onclick="openPortail('p6')"><span class="badge" style="background:#1e2a3a;color:white">PORTAIL 6</span><h3>📦 SUIVI COMMANDE</h3><p>Suivi temps réel</p></div>
+<div class="portail" onclick="openPortail('p7')"><span class="badge" style="background:#e11d4820;color:#ff6b8a">PORTAIL 7</span><h3>🎥 VIDÉOS & EXPO</h3><p>Expo Manioc/Karité</p></div>
+<div class="portail" onclick="openPortail('p8')"><span class="badge" style="background:#ffbb00;color:black">PORTAIL 8 NOUVEAU</span><h3>🛵 GSIA-ZEM</h3><p>Livraison & E-commerce Cité - Marque GSIA</p></div>
 </div>
 
-<!-- DETAILS PORTAIL 1 -->
 <div class="detail-card active" id="p1">
 <h3>📚 PORTAIL 1 : FICHES PÉDAGOGIQUES APC</h3>
-<p style="font-size:12px;color:#aaa">Message officiel Direction : Je suis ARIZIKI BAH, DG de GSIA STUDIO. Depuis mon bureau, je vous montre comment créer vos fiches APC en 30 secondes.</p>
+<p style="font-size:11px;color:#00e676">● Message officiel Direction - Je suis ARIZIKI BAH</p>
+<p style="font-size:12px;color:#aaa">Créez vos fiches APC en 30 secondes depuis mon bureau.</p>
 <div style="background:white;color:black;border-radius:12px;padding:12px;margin-top:10px">
-<b>Primaire APC • Collège • Lycée</b><br>
-<span style="font-size:11px">CP1, CM2, 6ème, Terminale - Maths, Français, ECM, Sciences</span><br><br>
+<b>Primaire • Collège • Lycée</b><br>
+<span style="font-size:11px">CP1, CM2, 6ème, Terminale</span><br>
 <button class="btn-pay btn-yellow" onclick="payFedapay(1000,'Fiches Pedagogiques')">Lancer Démo 30s (Gratuit)</button>
-<button class="btn-pay btn-green" onclick="payFedapay(2000,'Pack Fiches 2000F')">Créer ma Fiche en 30s - 2000F FedaPay</button>
-<button class="btn-pay btn-blue">Voir fiches modèles</button>
+<button class="btn-pay btn-green" onclick="payFedapay(2000,'Pack Fiches')">Créer Fiche 30s - 2000F FedaPay</button>
 </div>
 </div>
 
-<!-- DETAILS PORTAIL 2 -->
 <div class="detail-card" id="p2">
 <h3>🎮 PORTAIL 2 : JEUX ÉDUCATIFS</h3>
-<p style="font-size:12px;color:#aaa">Version gratuite et payante avec génération automatique</p>
 <div style="background:#111;padding:12px;border-radius:12px">
 <p>🎯 10 nouveaux jeux générés chaque mois par IA GSIA</p>
-<p class="price">Gratuit : 3 jeux / Payant : 2000F/mois = 10 jeux illimités</p>
-<button class="btn-pay btn-green" onclick="payFedapay(2000,'Jeux Educatifs 10 jeux')">Générer 10 nouveaux jeux - 2000F FedaPay</button>
-<button class="btn-pay" style="background:#1e2a3a;color:white">Jouer version gratuite</button>
+<p class="price">Gratuit : 3 jeux / Payant : 2000F/mois</p>
+<button class="btn-pay btn-green" onclick="payFedapay(2000,'Jeux Educatifs')">Générer 10 jeux - 2000F FedaPay</button>
 </div>
 </div>
 
-<!-- DETAILS PORTAIL 3 -->
 <div class="detail-card" id="p3">
 <h3>🏫 PORTAIL 3 : GESTION ÉCOLE - La Lumière Lomé</h3>
-<p style="font-size:11px;color:#00e676">SCEAU FEDAPAY SÉCURISÉ - Direction BAH ARIZIKI</p>
+<p style="font-size:11px;color:#00e676">● FedaPay Sécurisé Activé - Direction BAH ARIZIKI</p>
 <div style="background:white;color:black;border-radius:12px;padding:12px">
 <b>GSIA ÉCOLE - Abonnement 5000F/mois</b>
-<p style="font-size:11px;color:#555">Écolage payé par FedaPay + Suivi parents de la progression de leurs enfants même à la maison. Système académique complet.</p>
+<p style="font-size:11px;color:#555">Écolage FedaPay + Suivi parents de la progression à la maison.</p>
 <p class="price" style="color:#2979ff">5000F/mois</p>
 <button class="btn-pay btn-blue" onclick="payFedapay(5000,'Ecole La Lumiere')">Payer Écolage 5000F - FedaPay</button>
-<button class="btn-pay" style="background:white;border:1px solid #2979ff;color:#2979ff">MODE DIRECTION</button>
 <button class="btn-pay" style="background:#1e2a3a;color:white">MODE PARENT - Voir progression enfant</button>
-<a href="https://wa.me/22892817593?text=Inscription%20Ecole%20La%20Lumiere" style="display:block;text-align:center;margin-top:8px;color:#25D366;font-size:12px">WhatsApp Inscription : 92 81 75 93</a>
 </div>
 </div>
 
-<!-- DETAILS PORTAIL 4 -->
 <div class="detail-card" id="p4">
 <h3>🔐 PORTAIL 4 : COFFRE FORT & TONTINE</h3>
-<p style="font-size:12px">Tontine Solidarité Digitale FedaPay - Commission DG 5%</p>
 <div style="background:#00000060;padding:12px;border-radius:12px;border:1px solid #ff910050">
-<b>Tontine Solidarité Enseignants Lomé</b><br>
-<span style="font-size:11px">12 Membres (mensuelle) - Tour Actuel : Mois #3 sur 12</span>
-<p class="price">10 000 FCFA / tour</p>
-<button class="btn-pay btn-orange" onclick="payFedapay(10000,'Tontine 10000')">PAYER COTISATION 10 000F - FedaPay (Flooz/TMoney)</button>
-<button class="btn-pay" style="background:#1e2a3a;color:white">Rejoindre avec un code</button>
-<button class="btn-pay btn-green">+ Créer une tontine</button>
+<b>Tontine Solidarité Enseignants Lomé - 12 Membres</b>
+<p class="price">10 000 FCFA / tour - Commission DG 5%</p>
+<button class="btn-pay btn-orange" onclick="payFedapay(10000,'Tontine')">PAYER COTISATION 10 000F - FedaPay</button>
+<button class="btn-pay" style="background:#1e2a3a;color:white">+ Créer une tontine</button>
 </div>
 </div>
 
-<!-- DETAILS PORTAIL 5 -->
 <div class="detail-card" id="p5">
 <h3>💼 PORTAIL 5 : GESTION ENTREPRISE & BUSINESS LINK</h3>
-<p style="font-size:11px;color:#00e676">GSIA BUSINESS • SCEAU FEDAPAY ACTIF • LOMÉ - pk_live_UKrZmm...</p>
+<p style="font-size:11px;color:#00e676">● GSIA BUSINESS - FedaPay Sécurisé Activé - LOMÉ</p>
 <div style="background:#111;padding:12px;border-radius:12px">
 <b>MODE MON ENTREPRISE (3000F/mois)</b><br>
-<span style="font-size:11px;color:#aaa">Version africaine de Sage - Compta, Facturation FedaPay, Stock, Paie</span>
-<button class="btn-pay btn-green" onclick="payFedapay(3000,'Entreprise 3000')">Renouveler Abonnement 3000F FedaPay</button>
-<br>
-<b>MODE BUSINESS LINK (MATCH DANGOTE) - 2000F par contact</b><br>
-<span style="font-size:11px;color:#aaa">LinkedIn des affaires Afrique+Europe. Commission DG 2000F</span>
+<span style="font-size:11px;color:#aaa">Version africaine de Sage</span>
+<button class="btn-pay btn-green" onclick="payFedapay(3000,'Entreprise 3000')">Renouveler 3000F FedaPay</button>
+<br><b>MODE BUSINESS LINK - 2000F par contact</b>
 <div style="background:white;color:black;border-radius:10px;padding:10px;margin:8px 0">
-<b>10 Tonnes Manioc / mois - 150F/kg</b><br>
-<span style="font-size:10px">Coopérative Paysanne Zio - LOMÉ</span><br>
+<b>10 Tonnes Manioc / mois - 150F/kg - LOMÉ</b><br>
 <button class="btn-pay btn-blue" onclick="payFedapay(2000,'Contact Manioc')">Contacter - 2000F FedaPay</button>
-</div>
-<div style="background:white;color:black;border-radius:10px;padding:10px">
-<b>Beurre Karité Bio 100% - 2500F/kg</b><br>
-<span style="font-size:10px">Groupement Féminin Kara</span><br>
-<button class="btn-pay btn-blue" onclick="payFedapay(2000,'Contact Karite')">Contacter - 2000F FedaPay</button>
 </div>
 </div>
 </div>
 
-<!-- DETAILS PORTAIL 6 -->
 <div class="detail-card" id="p6">
 <h3>📦 PORTAIL 6 : SUIVI COMMANDE</h3>
 <div style="background:#111;padding:12px;border-radius:12px">
-<p style="font-size:12px">Entrez votre code commande pour suivre</p>
-<input placeholder="Ex: GSIA-2026-001" style="width:100%;padding:10px;border-radius:8px;border:none;margin:8px 0">
+<input placeholder="Code: GSIA-2026-001" style="width:100%;padding:10px;border-radius:8px;border:none;margin:8px 0">
 <button class="btn-pay btn-yellow">Suivre ma commande</button>
-<p style="font-size:11px;color:#aaa;margin-top:10px">Statut : Préparation → En route → Livré (comme Gozem)</p>
 </div>
 </div>
 
-<!-- DETAILS PORTAIL 7 -->
 <div class="detail-card" id="p7">
 <h3>🎥 PORTAIL 7 : VIDÉOS & EXPO COMMERÇANTS</h3>
 <div style="background:#111;padding:12px;border-radius:12px">
-<p style="font-size:12px">Vidéos illustratives + Exposition produits locaux</p>
 <button class="btn-pay" style="background:#e11d48;color:white">▶ Voir vidéos GSIA</button>
-<div style="background:white;color:black;border-radius:10px;padding:10px;margin-top:10px">
-<b>Expo : Coopérative Zio - Manioc</b><br>
-<button class="btn-pay btn-blue">Voir stand virtuel</button>
-</div>
 </div>
 </div>
 
-<!-- DETAILS PORTAIL 8 -->
 <div class="detail-card" id="p8">
-<h3>🛵 PORTAIL 8 NOUVEAU : GOZEM + JUMIA + GLOVO INTÉGRÉ</h3>
-<p style="font-size:12px;color:#ffbb00">Nouveau projet Cité Impériale - En construction</p>
+<h3>🛵 PORTAIL 8 : GSIA-ZEM - MARQUE OFFICIELLE</h3>
+<p style="font-size:11px;color:#00e676">● Service Officiel de la Cité Impériale - 100% GSIA - Non affilié à Gozem/Jumia/Glovo</p>
 <div style="background:linear-gradient(135deg,#ffbb0020,#ff8c0020);padding:12px;border-radius:12px;border:1px solid #ffbb00">
-<b>Livraison rapide + E-commerce + Courses</b><br>
-<span style="font-size:11px;color:#aaa">Intégration Gozem pour livraison, Jumia pour boutique en ligne, Glovo pour courses alimentaires. Tous les commerçants de la Cité livrables à domicile à Lomé.</span>
-<p class="price">Commission livraison : 500F</p>
-<button class="btn-pay btn-yellow" onclick="payFedapay(500,'Livraison Gozem')">Commander livraison - 500F FedaPay</button>
-<button class="btn-pay" style="background:#1e2a3a;color:white">Devenir livreur Gozem GSIA</button>
-<button class="btn-pay" style="background:#25D366;color:white" onclick="window.open('https://wa.me/22898221495?text=Gozem%20GSIA')">WhatsApp Gozem : 98 22 14 95</button>
+<b>GSIA-ZEM - Livraison Rapide Cité + E-commerce + Courses</b><br>
+<span style="font-size:11px;color:#aaa">Notre propre service. Tous les commerçants de la Cité livrables à Lomé, Kara, partout au Togo.</span>
+<p class="price">Livraison GSIA-ZEM : 500F - 1000F</p>
+<button class="btn-pay btn-yellow" onclick="payFedapay(500,'GSIA-ZEM 500F')">Commander GSIA-ZEM - 500F FedaPay</button>
+<button class="btn-pay" style="background:#1e2a3a;color:white">Devenir livreur GSIA-ZEM</button>
+<button class="btn-pay" style="background:#25D366;color:white" onclick="window.open('https://wa.me/22898221495?text=GSIA-ZEM')">WhatsApp GSIA-ZEM : 98 22 14 95</button>
 </div>
 </div>
 
-<div style="text-align:center;padding:20px;border:1px dashed #ffbb00;border-radius:16px;margin-top:20px">
-<h3 style="color:#ffbb00">📞 QG CENTRAL</h3>
-<p style="font-size:12px">FedaPay LIVE : pk_live_UKrZmmi0...<br>Traoré Aboudoulaye<br><b>92 81 75 93 / 98 22 14 95</b><br>Aboudoulayeltraore0770@gmail.com<br><br>TMoney (*145#) / Flooz (*155#) / Carte Visa</p>
+<div style="text-align:center;padding:20px;border:1px dashed #ffbb00;border-radius:16px;margin-top:20px;background:#111820">
+<h3 style="color:#ffbb00;margin:5px 0">📞 QG CENTRAL</h3>
+<p style="font-size:12px;line-height:1.8">
+<span style="color:#00e676">● FedaPay Sécurisé Activé</span><br>
+Traoré Aboudoulaye<br>
+<b>92 81 75 93 / 98 22 14 95</b><br>
+Aboudoulayeltraore0770@gmail.com<br><br>
+TMoney (*145#) / Flooz (*155#) / Carte Visa<br>
+<span style="font-size:10px;color:#aaa">Paiement 100% sécurisé - Reçu avec filigrane nominatif</span>
+</p>
 </div>
 
 </div>
 
 <script>
+// CLÉ FEDAPAY CACHÉE - Visible seulement dans code source, pas à l'écran
+const GSIA_FEDAPAY_KEY = 'pk_live_UKrZmmI0_123456789';
 function openPortail(id){
 document.querySelectorAll('.detail-card').forEach(c=>c.classList.remove('active'));
 document.getElementById(id).classList.add('active');
@@ -208,7 +186,7 @@ document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 function payFedapay(montant, desc){
 let widget = FedaPay.init({
-public_key: 'pk_live_UKrZmm...',
+public_key: GSIA_FEDAPAY_KEY,
 transaction: {amount: montant, description: desc},
 customer: {email: 'Aboudoulayeltraore0770@gmail.com', lastname: 'TRAORE', firstname: 'Aboudoulaye'},
 onComplete: function(r){ if(r.reason==='CHECKOUT_COMPLEMENTED'){ alert('Paiement '+montant+'F réussi pour '+desc+' !'); window.open('https://wa.me/22892817593?text=Jai%20paye%20'+montant+'F%20'+encodeURIComponent(desc)); }}
@@ -217,4 +195,4 @@ widget.open();
 }
 </script>
 </body>
-                                                                                                                                                             </html>
+                                                                                                                              </html>
