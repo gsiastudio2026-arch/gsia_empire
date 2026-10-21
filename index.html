@@ -3,38 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GSIA STUDIO TOGO - QG Officiel</title>
-<link rel="icon" href="gsia_new_512.png?v=3">
-<link rel="apple-touch-icon" href="gsia_new_512.png?v=3">
+<title>GSIA ECOSYSTEME CENTRAL</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0e14;color:#fff;font-family:system-ui}
-.top{background:linear-gradient(90deg,#ffb700,#ff7b00);color:#000;text-align:center;padding:7px;font-weight:900;font-size:12px}
-.head{padding:16px;background:#111820;display:flex;justify-content:space-between;align-items:center}
-.logo{display:flex;gap:10px;align-items:center}
-.icon{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid #ffb700;background:#000}
-h1{font-size:15px;color:#ffb700;line-height:1.1}
-h1 span{font-size:10px;color:#888;display:block}
-.badge{padding:4px 10px;border-radius:20px;font-size:10px;font-weight:900}
-.bg-green{color:#00ff88;border:1px solid #00ff88}
-.nav{display:flex;gap:7px;padding:10px;overflow:auto}
-.nav a{padding:7px 14px;background:#1e2a3a;color:#fff;border-radius:20px;text-decoration:none;font-size:13px}
-.nav a.active{background:#ffb700;color:#000}
-.card{background:#111820;margin:10px;padding:14px;border-radius:16px}
-.profile-icon{width:50px;height:50px;border-radius:50%;border:2px solid #00ff88}
-.btn{width:100%;padding:13px;border-radius:12px;border:0;font-weight:900;margin-top:8px}
-.btn-gold{background:linear-gradient(90deg,#ffb700,#ff8c00);color:#000}
-.btn-dark{background:#1e2a3a;color:#ffb700}
-.btn-green{background:#25D366;color:#fff}
+body{background:#070A12;color:white;margin:0;font-family:Arial;text-align:center}
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:80vh;padding:20px;background:radial-gradient(circle at center, #1a2a0a 0%, #070A12 70%)}
+.hero img{width:220px;height:220px;border-radius:50%;border:4px solid #ffbb00;box-shadow:0 0 40px gold}
+h1{color:#ffbb00;margin-top:20px;font-size:28px}
+.btn-gold{background:linear-gradient(90deg,#ffbb00,#ff8c00);color:#000;padding:15px 35px;border-radius:30px;font-weight:900;text-decoration:none;display:inline-block;margin-top:20px}
+.nav{display:flex;gap:8px;padding:12px;justify-content:center;background:#0e1424;position:sticky;top:0;z-index:10}
+.nav a{padding:8px 16px;background:#1e2a3a;color:white;border-radius:20px;text-decoration:none;font-size:14px}
+.nav a.active{background:#ffbb00;color:black;font-weight:900}
+.section{padding:20px;max-width:600px;margin:0 auto;text-align:left}
+.hero-text{padding:30px 20px;text-align:center;background:linear-gradient(180deg,#111820 0%,#070A12 100%);border-bottom:2px solid #ffbb0033}
+.hero-text h2{color:#ffbb00;font-size:26px;margin-bottom:10px}
+.hero-text p{line-height:1.7;color:#ddd;font-size:15px}
+.card{background:#111820;margin:14px 0;padding:18px;border-radius:16px;border:1px solid #223322}
+.badge{background:#ffbb00;color:black;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900}
+.btn-w{background:#25D366;color:white;width:100%;padding:14px;border-radius:12px;font-weight:900;display:block;text-align:center;text-decoration:none;margin-top:10px}
 </style>
 </head>
 <body>
-<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px 20px; background:#000;">
-  <img src="gsia_new_512.png?v=3" style="width:180px; height:180px; border-radius:50%; border:4px solid gold; box-shadow:0 0 30px gold;">
-  <h1 style="color:gold; margin-top:20px; font-size:28px;">GSIA STUDIO TOGO</h1>
-  <p style="color:white;">Bienvenue DG TRAORE - QG Officiel</p>
-  <a href="#accueil" style="margin-top:20px; background:gold; color:black; padding:12px 30px; border-radius:25px; text-decoration:none; font-weight:bold;">Continuer →</a>
+
+<div class="hero" id="accueil">
+<img src="gsia_new_512.png?v=3">
+<h1>GSIA STUDIO TOGO</h1>
+<p>QG Officiel - DG TRAORE</p>
+<a href="#ecosysteme" class="btn-gold">Continuer →</a>
 </div>
-<div class="nav"><a class="active">Accueil</a><a>Formations</a><a>Produits</a><a>Contact</a></div>
+
+<div class="nav">
+<a class="active" href="#accueil">Accueil</a>
+<a href="#hopital">Hôpital</a>
+<a href="#ecole">École</a>
+<a href="#business">Business</a>
+</div>
+
+<div class="hero-text" id="ecosysteme">
+<h2>GSIA ÉCOSYSTÈME CENTRAL</h2>
+<p><b>Bienvenue chez toi DG. GSIA n'est pas une boutique, c'est une cité.</b></p>
+<p style="margin-top:15px">
+Tu es malade, on te soigne.<br>
+Tu veux apprendre, on t'enseigne.<br>
+Tu veux saisir des opportunités d'affaires, on te guide.<br>
+Tu veux travailler, on te lance.
+</p>
+<p style="color:#ffbb00;font-weight:900;margin-top:15px">Éducation • Santé • Business • Finance - Tout ton avenir en un seul endroit.</p>
+</div>
+
+<div class="section">
+<div class="card" id="hopital">
+<span class="badge">SANTÉ</span>
+<h3>🏥 GSIA HÔPITAL</h3>
+<p style="color:#aaa;font-size:13px">Consultations • Pharmacie • Urgences</p>
+<a href="https://wa.me/22892817593?text=Bonjour%20GSIA%20HOPITAL%20RDV" class="btn-w">📲 RDV : 92 81 75 93</a>
+<a href="https://wa.me/22898221495?text=URGENCE%20GSIA" class="btn-w" style="background:#e11d48">🚨 URGENCE : 98 22 14 95</a>
+</div>
+
+<div class="card" id="ecole">
+<span class="badge">ÉDUCATION</span>
+<h3>🎓 GSIA ÉCOLE & FORMATIONS</h3>
+<p style="color:#aaa;font-size:13px">Informatique • Design • Business<br>Certificat officiel GSIA</p>
+<a href="https://wa.me/22892817593?text=Je%20veux%20apprendre%20GSIA" class="btn-w" style="background:#ffbb00;color:black">Je veux apprendre → 92 81 75 93</a>
+</div>
+
+<div class="card" id="business">
+<span class="badge">OPPORTUNITÉS</span>
+<h3>💼 GSIA BUSINESS</h3>
+<p style="color:#aaa;font-size:13px">Saisir des opportunités d'affaires<br>On te guide vers l'autonomie</p>
+<a href="https://wa.me/22892817593?text=Opportunites%20Business%20GSIA" class="btn-w" style="background:#3b82f6">Saisir opportunité → 92 81 75 93</a>
+</div>
+
+<div class="card">
+<span class="badge">TRAVAIL</span>
+<h3>🚀 GSIA EMPLOI</h3>
+<p style="color:#aaa;font-size:13px">Tu veux travailler, on te lance.<br>Rejoins l'équipe de la Cité</p>
+<a href="https://wa.me/22898221495?text=Je%20veux%20travailler%20GSIA" class="btn-w" style="background:#1e2a3a">Je veux travailler → 98 22 14 95</a>
+</div>
+
+<div class="card" style="text-align:center;border:1px dashed #ffbb00">
+<h3 style="color:#ffbb00">📞 QG CENTRAL</h3>
+<p>Lomé, TOGO<br><b>92 81 75 93 / 98 22 14 95</b></p>
+</div>
+</div>
+
 </body>
-  </html>
+</html>
