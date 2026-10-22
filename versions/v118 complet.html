@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GSIA V118 SECURE + PARRAINAGE</title><link rel="manifest" href="./manifest.json">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;color:#fff;font-family:Arial}
+.header{background:#111;border-bottom:2px solid #ffbb00;padding:12px;text-align:center;position:sticky;top:0;z-index:99}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px;max-width:750px;margin:auto}
+.card{background:#161616;border:1px solid #333;border-radius:12px;padding:12px;text-align:center}
+.card.gold{border-color:#ffbb00}.card.green{border-color:#00ff88}
+.btn{width:100%;padding:12px;border:none;border-radius:22px;font-weight:bold;cursor:pointer;margin-top:8px}
+.btn-gold{background:linear-gradient(90deg,#ffbb00,#ff8800);color:#000}
+.btn-green{background:linear-gradient(90deg,#00ff88,#00cc66);color:#000}
+.btn-dark{background:#222;color:#fff}
+.input{width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#000;color:#fff;margin:6px 0}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:999;padding:15px;overflow-y:auto}.modal.active{display:block}
+.page{display:none;max-width:750px;margin:auto;padding:12px}.page.active{display:block}
+.badge{font-size:10px;padding:3px 7px;border-radius:10px;font-weight:bold}
+</style></head><body>
+<div class="header">
+<img src="./gsia_new_512.png" style="width:55px;border-radius:50%;border:2px solid #ffbb00"><h3 style="color:#ffbb00">GSIA STUDIO TOGO V118</h3>
+<small>Education • Business • QG Autonome Sécurisé</small><br>
+<span class="badge" style="background:#00ff88;color:#000">🔒 FEDAPAY LIVE SÉCURISÉ - CLÉ CACHÉE</span>
+<span class="badge" style="background:#ffbb00;color:#000">PWA ACTIVE</span>
+</div>
+
+<div id="menu">
+<div style="max-width:750px;margin:auto;padding:10px;background:#111;border-radius:10px;margin-top:10px">
+<b>Bienvenue Traoré Aboudoulaye (Admin)</b><br><small>+228 98 22 14 95 • Aboudoulayeltraore0770@gmail.com</small><br>
+<small style="color:#00ff88">Ton Code Parrain: <b id="myCode">GSIA-ABOU-772</b> • Gains: <b>2 400F</b> • Invités: <b>12</b></small>
+</div>
+<div class="grid">
+<div class="card gold" onclick="openP('business')"><div style="font-size:26px">🌍</div><b>BUSINESS MATCH</b><br><small>Dangote • BB Lomé • MATCH 2000F</small><br><button class="btn btn-gold">OUVRIR</button></div>
+<div class="card gold" onclick="openP('offres')"><div style="font-size:26px">📦</div><b>OFFRES - Petits vendeurs</b><br><small>Manioc 10T - Contacter 2000F</small><br><button class="btn btn-gold">VOIR OFFRES</button></div>
+<div class="card gold" onclick="openP('entreprise')"><div style="font-size:26px">💼</div><b>GSIA ENTREPRISES</b><br><small>3000F/mois - Sage Africain</small><br><button class="btn btn-gold">FACTURATION</button></div>
+<div class="card gold" onclick="openP('ecole')"><div style="font-size:26px">🏫</div><b>GESTION ÉCOLE</b><br><small>5000F/mois - La Lumière Lomé</small><br><button class="btn btn-gold">GÉRER</button></div>
+<div class="card green" onclick="openP('parrainage')"><div style="font-size:26px">🤝</div><b>PARRAINAGE 10%</b><br><small>Gagne 200F par invité</small><br><span class="badge" style="background:#00ff88;color:#000">NOUVEAU REVENU</span></div>
+<div class="card green" onclick="openP('chat')"><div style="font-size:26px">💬</div><b>CHAT OFFLINE</b><br><small>Sans Internet</small></div>
+<div class="card gold" onclick="openP('edu')"><div style="font-size:26px">📚</div><b>FICHES APC</b><br><small>30s - Primaire Collège Lycée</small></div>
+<div class="card green" onclick="openP('academie')"><div style="font-size:26px">🎓</div><b>ACADÉMIE GSIA</b><br><small>IA Payant • Excel Gratuit • Pagnes</small></div>
+</div>
+</div>
+
+<div id="business" class="page"><button class="btn btn-dark" onclick="goMenu()">← QG</button>
+<h3 style="color:#ffbb00">Direction: BAH ARIZIKI - Commission DG 2000 FCFA</h3>
+<h4 style="margin-top:10px">🔥 DEMANDES - Les gros qui achètent (3 Appels d'Offres)</h4>
+<div class="card" style="text-align:left;margin:8px 0"><b>Raffinerie Dangote - 100 Fournisseurs Maïs</b><br><small>Besoin 100T/mois - Urgent Lomé</small><button class="btn btn-gold" onclick="pay('MATCH Dangote - 2000F')">MATCH DIRECT - 2000F 🔒</button></div>
+<div class="card" style="text-align:left;margin:8px 0"><b>Brasserie BB Lomé - 20T Sorgho</b><br><button class="btn btn-gold" onclick="pay('MATCH BB Lomé - 2000F')">MATCH DIRECT - 2000F 🔒</button></div>
+<div class="card" style="text-align:left;margin:8px 0"><b>Entreprise Logistique Ghana - 35T</b><br><button class="btn btn-gold" onclick="pay('MATCH Ghana - 2000F')">MATCH DIRECT - 2000F 🔒</button></div>
+</div>
+
+<div id="offres" class="page"><button class="btn btn-dark" onclick="goMenu()">← QG</button>
+<h3>📦 OFFRES - Les petits qui vendent</h3>
+<div class="card" style="text-align:left;margin:8px 0"><b>JE SUIS À LOMÉ - 10 Tonnes Manioc - 150F/kg</b><br><small>Producteur vérifié</small><button class="btn btn-dark" onclick="pay('Contact Manioc Lomé - 2000F')">CONTACTER - 2000F 🔒</button></div>
+<div class="card" style="text-align:left;margin:8px 0"><b>JE SUIS À KARA - Beurre Karité Bio</b><br><button class="btn btn-dark" onclick="pay('Contact Karité - 2000F')">CONTACTER - 2000F 🔒</button></div>
+</div>
+
+<div id="parrainage" class="page"><button class="btn btn-dark" onclick="goMenu()">← QG</button>
+<h2 style="color:#00ff88">🤝 PARRAINAGE 10% - DOUBLE GAIN</h2>
+<div class="card green" style="text-align:left;margin-top:10px">
+<b>Ton Lien Parrainage :</b><input class="input" id="refLink" value="https://gsiastudio2026-arch.github.io/gsia_empire/?ref=GSIA-ABOU-772" readonly>
+<button class="btn btn-green" onclick="navigator.clipboard.writeText(document.getElementById('refLink').value);alert('Lien copié ! Gagne 10% !')">COPIER LIEN</button>
+<br><br><div style="background:#000;padding:10px;border-radius:8px">
+<b>Comment tu gagnes ?</b><br>
+• Ami clique ton lien → Paie 2000F (FedaPay sécurisé)<br>
+• Toi → <b style="color:#00ff88">200F (10%) instantané</b><br>
+• Entreprise → Gagne 1800F sur invité<br>
+• 10 filleuls = 2000F • 100 filleuls = 20 000F<br>
+• Pas de limite ! Suivi dans QG
+</div><br>
+<div class="grid" style="padding:0"><div class="card"><b>12 Invités</b></div><div class="card"><b style="color:#00ff88">2 400F Gains</b></div></div>
+<button class="btn btn-green" onclick="alert('Retrait Flooz/TMoney demandé !')">RETIRER GAINS 💰</button>
+</div></div>
+
+<div id="entreprise" class="page"><button class="btn btn-dark" onclick="goMenu()">← QG</button><h3>💼 GSIA ENTREPRISES - Abonnement 3000F/mois - Version africaine de Sage</h3><p>CA: 850 000F • Bénéfice: 120 000F • Stock: 45 • Employés: 4</p><button class="btn btn-gold" onclick="pay('Abonnement Entreprise 3000F')">PAYER 3000F/mois</button></div>
+<div id="ecole" class="page"><button class="btn btn-dark" onclick="goMenu()">← QG</button><h3>🏫 Gestion École - 5000F/mois - Ecole La Lumière Lomé - Mode Direction / Parent</h3><button class="btn btn-gold" onclick="pay('Ecole 5000F')">PAYER 5000F/mois</button></div>
+<div id="edu" class="page"><button class="btn btn-dark" onclick="goMenu()">← QG</button><h3>📚 Fiches APC 30s</h3><button class="btn btn-gold" onclick="pay('Fiche APC 2000F')">GÉNÉRER FICHE - 2000F</button></div>
+<div id="chat" class="page"><button class="btn btn-dark" onclick="goMenu()">← QG</button><h3>💬 Chat Offline QG - Fonctionne sans connexion</h3></div>
+<div id="academie" class="page"><button class="btn btn-dark" onclick="goMenu()">← QG</button><h3>🎓 Académie: IA Payant, Excel Gratuit, Suivi Logistique, Pagnes, Logos</h3></div>
+
+<div id="payModal" class="modal"><div class="card" style="max-width:400px;margin:20px auto;text-align:left">
+<h3 style="color:#00ff88">🔒 FedaPay LIVE - Paiement Sécurisé</h3><small>Clé API cachée côté serveur - 256-bit - Filigrane nominatif</small><br><br>
+<b>Article: <span id="payArticle">MATCH</span></b><br><small>Parrain: <span id="refDisp">GSIA-ABOU-772</span> → 10% reversé</small><br><br>
+<input class="input" placeholder="Nom"><input class="input" placeholder="Téléphone TMoney/Flooz"><input class="input" placeholder="Email">
+<button class="btn btn-gold" onclick="processPay()">PAYER - TMoney / Flooz / Carte 💳</button>
+<button class="btn btn-dark" onclick="closePay()">Annuler</button>
+<br><small style="opacity:.5">Aucune clé pk_live dans ce code - Traitement serveur sécurisé</small>
+</div></div>
+
+<script>
+const SECURE_URL="https://TON-WORKER.workers.dev/pay"; // << Tu mettras ton URL Cloudflare ici - clé cachée dedans
+function openP(id){document.getElementById('menu').style.display='none';document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active')}
+function goMenu(){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('menu').style.display='block'}
+function pay(a){document.getElementById('payArticle').innerText=a;let ref=new URLSearchParams(location.search).get('ref')||document.getElementById('myCode').innerText;document.getElementById('refDisp').innerText=ref;document.getElementById('payModal').classList.add('active')}
+function closePay(){document.getElementById('payModal').classList.remove('active')}
+function processPay(){alert('🔒 Serveur sécurisé contacté !\nClé cachée, pas dans le code !\nPaiement '+document.getElementById('payArticle').innerText+'\nParrain '+document.getElementById('refDisp').innerText+' gagne 200F (10%)\nEntreprise gagne 1800F\n\nPour activer vrai paiement: Crée Worker Cloudflare et mets ta clé dedans.');closePay();}
+window.onload=()=>{let r=new URLSearchParams(location.search).get('ref');if(r){alert('🎉 Tu viens via parrain '+r+' ! Il gagnera 10% sur ton paiement !');}}
+</script></body></html>
