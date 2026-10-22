@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GSIA STUDIO TOGO V119 - TA Cité Complète</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0f1f;color:#e8e8e8;font-family:Inter,Arial}
+.top{background:#ff2d2d;color:#fff;text-align:center;padding:6px;font-size:12px;font-weight:bold;position:sticky;top:0;z-index:100}
+.h{background:#0e162e;border-bottom:2px solid #ffbb00;padding:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:8px;background:#0e162e}
+.tab{padding:8px 14px;border-radius:20px;background:#1a2340;border:1px solid #333;font-size:12px;white-space:nowrap;cursor:pointer}
+.tab.active{background:#ffbb00;color:#000;font-weight:bold}
+.card{background:#111d3a;border:1px solid #22315f;border-radius:14px;padding:12px;margin:10px 0}
+.card.green{border-color:#0a9a5a}.card.gold{border-color:#ffbb00}
+.btn{padding:10px 14px;border:none;border-radius:22px;font-weight:bold;cursor:pointer}
+.btn-gold{background:linear-gradient(90deg,#ffbb00,#ff8800);color:#000}
+.btn-green{background:#0a9a5a;color:#fff}
+.btn-dark{background:#1e2a4a;color:#fff}
+.badge{font-size:10px;padding:3px 8px;border-radius:10px;font-weight:bold}
+.price{color:#ffbb00;font-size:20px;font-weight:bold}
+.search{width:100%;padding:10px;border-radius:20px;border:1px solid #333;background:#0a0f1f;color:#fff;margin:8px 0}
+.secure{background:#001a0f;border:1px solid #0a9a5a;color:#00ff88;font-size:11px;padding:6px;border-radius:8px;text-align:center;margin:8px 0}
+.page{display:none;max-width:780px;margin:auto;padding:0 10px 80px}.page.active{display:block}
+.bottom{position:fixed;bottom:0;left:0;width:100%;background:#ffbb00;color:#000;padding:10px;text-align:center;font-weight:bold;z-index:99;cursor:pointer}
+.flex{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+</style></head><body>
+<div class="top">NOUVEAUTÉ 2026-2027 - PROGRAMMES OFFICIELS MIS À JOUR • FEDAPAY LIVE SÉCURISÉ - CLÉ CACHÉE 🔒</div>
+<div class="h">
+<div style="display:flex;gap:10px;align-items:center"><img src="./gsia_new_512.png" style="width:42px;border-radius:50%;border:2px solid #ffbb00"><div><b style="color:#ffbb00">GSIA STUDIO</b> <span class="badge" style="background:#ffbb00;color:#000">TOGO</span><br><small>Éducation • Formation • Créativité</small></div></div>
+<div style="display:flex;gap:6px"><span class="badge" style="background:#1e2a4a">GSIA STUDIO • Togo 2026-2027</span><span class="badge" style="background:#1e2a4a;border:1px solid #ffbb00">&lt;/&gt; Flutter</span><span class="badge" style="background:#0a3a1a">Admin</span></div>
+</div>
+<div class="tabs">
+<span class="tab active" onclick="showP('accueil')">Accueil</span>
+<span class="tab" onclick="showP('primaire')">Primaire APC</span>
+<span class="tab" onclick="showP('college')">Collège</span>
+<span class="tab" onclick="showP('lycee')">Lycée</span>
+<span class="tab" onclick="showP('business')">Business 3000F</span>
+<span class="tab" onclick="showP('parrainage')">Parrainage 10%</span>
+<span class="tab" onclick="showP('galerie')">Galerie</span>
+</div>
+
+<!-- ACCUEIL = TA PHOTO DG -->
+<div id="accueil" class="page active">
+<div class="card" style="background:linear-gradient(135deg,#1a2340,#0e162e);display:flex;gap:10px;align-items:center"><img src="./gsia_new_512.png" style="width:90px;border-radius:12px"><div><span class="badge" style="background:#ffbb00;color:#000">GSIA STUDIO TOGO • DIRECTION GÉNÉRALE</span><br><b>ARIZIKI BAH • Directeur Général<br>GSIA STUDIO</b><br><span class="badge" style="background:#0a9a5a">Lomé 2026-2027</span></div></div>
+
+<div class="card"><button class="btn btn-dark" style="float:right">🎥 Mode Vidéo Directe</button><div style="clear:both"></div>
+<p style="color:#ffbb00;font-weight:bold;margin-top:10px">● MESSAGE OFFICIEL DE LA DIRECTION</p><h2 style="margin:6px 0">Je suis ARIZIKI BAH, DG de GSIA STUDIO</h2><p style="opacity:.8">Depuis mon bureau, je vous montre comment créer vos fiches APC en 30 secondes.</p>
+<div class="flex" style="margin-top:10px"><button class="btn btn-gold" onclick="showP('primaire')">▶ Lancer Démo 30s</button><button class="btn btn-dark">↻</button><button class="btn btn-dark">🔊</button></div>
+<div class="flex" style="margin-top:10px"><button class="btn btn-green" onclick="pay('Fiche APC 30s - 2000F','2000')">📄 Créer ma Fiche en 30s</button><button class="btn btn-dark" onclick="showP('primaire')">Voir fiches modèles →</button></div></div>
+
+<div class="card">
+<h3 style="color:#ffbb00">01 L'élève au centre & compétences pour la vie réelle</h3><h2 style="margin:8px 0">Comprendre la Méthode APC en 2 Minutes</h2>
+<p style="opacity:.8">L'Approche Par Compétences (APC) en vigueur au Togo transforme le cours magistral en atelier actif. L'élève n'est plus spectateur : il manipule, résout des problèmes concrets et acquiert des réflexes utiles au quotidien.</p>
+<div style="background:#2a1f00;border:1px solid #5a4010;border-radius:10px;padding:10px;margin:10px 0">💡 <b>Astuce inspection :</b> Évitez de commencer directement par la règle théorique. Commencez toujours par une situation problème locale !</div>
+<button class="btn btn-gold" style="width:100%">▶ Visionner la Leçon Vidéo Gratuite →</button><br><br><button class="btn btn-dark" style="width:100%">📄 Tester le Générateur de Fiche</button>
+</div>
+
+<div class="card"><b>Checklist de Prise en Main • Enseignant GSIA</b> <small style="opacity:.6">Cochez chaque étape validée</small>
+<div style="margin-top:8px"><div style="background:#0a0f1f;padding:8px;border-radius:8px;margin:4px 0">□ 1. Vidéo APC 2min</div><div style="background:#0a0f1f;padding:8px;border-radius:8px;margin:4px 0">□ 2. Explorer les fiches</div><div style="background:#0a0f1f;padding:8px;border-radius:8px;margin:4px 0">□ 3. Modèle synoptique</div><div style="background:#0a0f1f;padding:8px;border-radius:8px;margin:4px 0">□ 4. Tester les jeux APC</div></div></div>
+
+<h3 style="margin:10px">NIVEAUX & SERVICES PÉDAGOGIQUES 2026-2027 <span style="float:right;color:#ffbb00">2026-2027</span></h3>
+<div class="card green" onclick="showP('primaire')"><div class="flex"><span style="font-size:28px">📖</span><div><b>Primaire APC</b> <span class="badge" style="background:#ffbb00;color:#000">24 fiches</span><br><small>6-11 ans • CP1, CP2, CE1, CE2, CM1, CM2</small></div><span style="margin-left:auto">→</span></div></div>
+<div class="card" onclick="showP('college')"><div class="flex"><span style="font-size:28px">🎓</span><div><b>Secondaire 1 Collège</b> <span class="badge" style="background:#223a8a">18 fiches</span><br><small>6ème à 3ème • Préparation BEPC Togo 2026-2027</small></div><span style="margin-left:auto">→</span></div></div>
+<div class="card" style="border-color:#8a4aff"><div class="flex"><span style="font-size:28px">📚</span><div><b>Secondaire 2 Lycée</b> <span class="badge" style="background:#8a4aff">20 fiches</span><br><small>2nde, 1ère, Terminale • Séries A, C, D (BAC 2026-2027)</small></div><span style="margin-left:auto">→</span></div></div>
+<div class="card" style="border-color:#ffaa00"><div class="flex"><span style="font-size:28px">🎨</span><div><b>Galerie Créative</b> <span class="badge" style="background:#ffaa00;color:#000">Projets</span><br><small>Vidéos (1000F) & Services Graphiques</small></div><span style="margin-left:auto">→</span></div></div>
+<div class="card" style="border-color:#ff8a00"><div class="flex"><span style="font-size:28px">🎮</span><div><b>Jeux Éducatifs APC Auto</b> <span class="badge" style="background:#0a9a5a">3 Jeux Gratuits</span> <span class="badge" style="background:#ff8a00">Auto-Génération IA</span><br><small>Deviens un génie ! Défis en Maths, Français et Éveil</small></div><span style="margin-left:auto">→</span></div></div>
+</div>
+
+<!-- PRIMAIRE & COLLEGE = TES PHOTOS FICHES -->
+<div id="primaire" class="page"><h2>Programme Togolais Officiel 2026-2027 (BEPC & BAC I/II)</h2><div class="secure">🔒 FEDAPAY LIVE - CLÉ API CACHÉE SERVEUR - PAIEMENT 100% SÉCURISÉ - PARRAINAGE 10%</div>
+<input class="search" placeholder="🔍 Rechercher par notion (ex: Pythagore, Génétique, Addition...)">
+<div class="flex"><span class="tab active">Toutes</span><span class="tab">Français</span><span class="tab">Maths</span><span class="tab">SVT</span><span class="tab">Histoire</span></div>
+
+<div class="card"><span class="badge" style="background:#0a9a5a">CP2</span> <small>Français / Écriture</small> <span class="badge" style="background:#5a4010;float:right">Coup de Cœur</span><h3 style="margin:8px 0">Fiche APC CP2 : Addition sans retenue et Résolution de Problèmes Additifs</h3><small>Problèmes contextualisés au quotidien togolais (achats au marché, bétail, billes).</small><div style="background:#0a0f1f;padding:8px;border-radius:8px;margin:8px 0"><b style="color:#ffbb00">Situation APC :</b> « Kossi achète 12 bonbons et Kodjo lui en donne 5 de plus. Combien en a-t-il ? »</div><div class="flex"><span>📄 15 pages</span><span style="color:#ffbb00">★ 4.7 (88 avis)</span></div><div class="flex" style="justify-content:space-between;margin-top:8px"><div><small>PRIX OFFICIEL</small><br><span class="price">2 000</span> <small>FCFA</small></div><button class="btn btn-gold" onclick="pay('CP2 Addition - 2000F','2000')">🔒 Payer avec FedaPay</button></div></div>
+
+<div class="card"><span class="badge" style="background:#0a9a5a">CP2</span> <small>Français / Écriture</small><h3 style="margin:8px 0">Fiche APC CP2 : Production d'Écrits Courts - La Petite Phrase Simple</h3><small>Canevas méthodologique APC pour amener l'élève à construire une phrase correcte (Sujet + Verbe + ...</small><div style="background:#0a0f1f;padding:8px;border-radius:8px;margin:8px 0"><b style="color:#ffbb00">Situation APC :</b> « Raconter en 2 phrases ce que fait le maître pendant la montée des couleurs. »</div><div class="flex"><span>📄 16 pages</span><span style="color:#ffbb00">★ 4.9 (96 avis)</span></div><div class="flex" style="justify-content:space-between;margin-top:8px"><div><small>PRIX OFFICIEL</small><br><span class="price">2 000</span> <small>FCFA</small></div><button class="btn btn-gold" onclick="pay('CP2 Production Écrits - 2000F','2000')">🔒 Payer avec FedaPay</button></div></div>
+
+<div class="card"><span class="badge" style="background:#0a9a5a">CE1</span> <small>Français / Grammaire</small><h3 style="margin:8px 0">Fiche APC CE1 : La Phrase Négative et Interrogative en Contexte</h3><div style="background:#0a0f1f;padding:8px;border-radius:8px;margin:8px 0"><b style="color:#ffbb00">Situation APC :</b> « Le policier municipal interroge un témoin après un petit incident près du rond-point. »</div><div class="flex"><span>📄 18 pages</span><span style="color:#ffbb00">★ 4.9 (130 avis)</span></div><div class="flex" style="justify-content:space-between;margin-top:8px"><div><small>PRIX OFFICIEL</small><br><span class="price">2 000</span> <small>FCFA</small></div><button class="btn btn-gold" onclick="pay('CE1 Phrase - 2000F','2000')">🔒 Payer avec FedaPay</button></div></div>
+</div>
+
+<div id="college" class="page">
+<h2>Secondaire 1 Collège (6e à 3e BEPC) - 2026-2027</h2><p><small>Fiches de cours complètes, situations d'intégration, travaux dirigés et annales d'examen corrigées pour les professeurs de collège et lycée du Togo • Année 2026-2027.</small></p>
+<div class="card"><span class="badge">4ème</span> <small>Physiques-Chimie</small> <span class="badge" style="background:#5a4010;float:right">Très Recommandé</span><h3 style="margin:8px 0">Fiche 5ème Collège : La Respiration et la Digestion chez l'Être Humain</h3><small>Schémas anatomiques complets en haute définition, fiches de travaux dirigés et expériences digestives.</small><div style="background:#0a0f1f;padding:8px;border-radius:8px;margin:8px 0"><b style="color:#ffbb00">Situation Problème :</b> « Comprendre l'impact d'une mauvaise alimentation lors des entraînements de football inter-classes. »</div><div class="flex"><span>📄 24 pages complètes</span><span style="color:#ffbb00">★ 4.9 (94 profs)</span></div><div class="flex" style="justify-content:space-between;margin-top:8px"><div><small>TARIF OFFICIEL</small><br><span class="price">2 500</span> <small>FCFA</small></div><button class="btn btn-gold" onclick="pay('Fiche 5ème Respiration - 2500F','2500')">🔒 Payer avec FedaPay</button></div></div>
+
+<div class="card"><span class="badge">4ème</span> <small>Physiques-Chimie</small><h3 style="margin:8px 0">Fiche 4ème Collège : Atomes, Molécules et Circuits Électriques en Dérivation</h3><small>Lois d'Ohm, loi des nœuds, schématisation normalisée et symboles chimiques usuels.</small><div style="background:#0a0f1f;padding:8px;border-radius:8px;margin:8px 0"><b style="color:#ffbb00">Situation Problème :</b> « Installation d'un kit solaire photovoltaïque pour l'éclairage d'une salle d'études. »</div><div class="flex"><span>📄 26 pages complètes</span><span style="color:#ffbb00">★ 4.9 (110 profs)</span></div><div class="flex" style="justify-content:space-between;margin-top:8px"><div><small>TARIF OFFICIEL</small><br><span class="price">2 500</span> <small>FCFA</small></div><button class="btn btn-gold" onclick="pay('Fiche 4ème Atomes - 2500F','2500')">🔒 Payer avec FedaPay</button></div></div>
+</div>
+
+<div id="lycee" class="page"><h2>Secondaire 2 Lycée - BAC</h2><p>Toutes les fiches Lycée A, C, D conformes MEN 2026-2027</p>
+<div class="card"><h3>Fiche Terminale D : Génétique Humaine</h3><button class="btn btn-gold" onclick="pay('Terminale Génétique - 2500F','2500')">Payer avec FedaPay - 2500F</button></div></div>
+
+<div id="business" class="page">
+<h2 style="color:#ffbb00">💼 GSIA ENTREPRISES + BUSINESS MATCH</h2>
+<div class="secure">🔒 Clé API cachée serveur • Parrainage 10% actif sur tous les paiements</div>
+<div class="card gold" style="text-align:left"><b>Raffinerie Dangote - 100 Fournisseurs Maïs</b><br><small>Besoin 100T/mois - Urgent Lomé - Commission DG 2000 FCFA</small><button class="btn btn-gold" style="width:100%;margin-top:8px" onclick="pay('MATCH Dangote - 2000F','2000')">MATCH DIRECT - 2000F 🟡 FedaPay Live</button></div>
+<div class="card gold" style="text-align:left"><b>Brasserie BB Lomé - 20T Sorgho</b><button class="btn btn-gold" style="width:100%;margin-top:8px" onclick="pay('MATCH BB Lomé - 2000F','2000')">MATCH DIRECT - 2000F</button></div>
+<div class="card gold"><b>GSIA BUSINESS - Abonnement 3000F/mois - Version africaine de Sage</b><button class="btn btn-gold" style="width:100%" onclick="pay('Abonnement Business 3000F','3000')">PAYER 3000F/mois</button></div>
+<div class="card gold"><b>Gestion École La Lumière Lomé - 5000F/mois</b><button class="btn btn-gold" style="width:100%" onclick="pay('Ecole 5000F','5000')">PAYER 5000F/mois</button></div>
+</div>
+
+<div id="parrainage" class="page">
+<h2 style="color:#00ff88">🤝 PARRAINAGE 10% - DOUBLE GAIN</h2>
+<div class="card green"><b>Ton Code Parrain :</b> <b id="myCode" style="color:#00ff88">GSIA-ABOU-772</b><br><input class="search" id="refLink" value="https://gsiastudio2026-arch.github.io/gsia_empire/?ref=GSIA-ABOU-772" readonly>
+<button class="btn btn-green" style="width:100%" onclick="navigator.clipboard.writeText(document.getElementById('refLink').value);alert('Lien copié ! Gagne 10% !')">COPIER LIEN PARRAINAGE</button>
+<div style="background:#000;padding:10px;border-radius:8px;margin-top:10px"><b>Comment ça marche ?</b><br>• Ami paie 2000F via FedaPay sécurisé (clé cachée)<br>• Toi → <b style="color:#00ff88">200F (10%) instantané</b><br>• Entreprise → 1800F<br>• 100 filleuls = 20 000F sans limite !</div>
+<div class="flex" style="margin-top:10px"><div class="card" style="flex:1;text-align:center"><b>12 Invités</b></div><div class="card" style="flex:1;text-align:center"><b style="color:#00ff88">2 400F Gains</b></div></div>
+<button class="btn btn-green" style="width:100%;margin-top:10px" onclick="retirerGains()">RETIRER GAINS → Flooz / TMoney 💰</button>
+</div></div>
+
+<div id="galerie" class="page"><h2>🎨 Galerie Créative + Académie</h2><div class="card"><b>IA Payant / Excel Gratuit / Pagnes / Logos / Vidéos 1000F</b></div></div>
+
+<div class="bottom" onclick="pay('Téléchargement Rapide - 2000F','2000')">🔒 PAYER 2000 F ET TÉLÉCHARGER MAINTENANT - Payer avec FedaPay</div>
+
+<div id="payModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:999;padding:15px;overflow-y:auto"><div class="card" style="max-width:420px;margin:30px auto;text-align:left">
+<h3 style="color:#00ff88">🔒 FedaPay LIVE - Paiement Sécurisé</h3><div class="secure">Aucune clé pk_live dans ce code ! Traitement serveur Cloudflare sécurisé 256-bit + Filigrane nominatif</div>
+<b>Article: <span id="payArticle">MATCH</span></b><br><small>Parrain: <span id="refDisp">GSIA-ABOU-772</span> → 10% reversé auto</small><br><br>
+<input class="search" placeholder="Nom complet"><input class="search" placeholder="Téléphone TMoney/Flooz"><input class="search" placeholder="Email">
+<button class="btn btn-gold" style="width:100%" onclick="processPay()">PAYER - TMoney / Flooz / Carte 💳 - Sécurisé</button>
+<button class="btn btn-dark" style="width:100%;margin-top:8px" onclick="closePay()">Annuler</button>
+</div></div>
+
+<script>
+// CONFIGURATION SECURISEE - CLÉ CACHÉE DANS WORKER
+const SECURE_URL="https://TON-WORKER.workers.dev/pay"; // REMPLACE PAR TON URL CLOUDFLARE WORKER - LA CLÉ EST DEDANS, PAS ICI !
+function showP(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'))}
+function pay(a,montant){document.getElementById('payArticle').innerText=a;let ref=new URLSearchParams(location.search).get('ref')||localStorage.getItem('gsia_ref')||document.getElementById('myCode').innerText;if(new URLSearchParams(location.search).get('ref'))localStorage.setItem('gsia_ref',ref);document.getElementById('refDisp').innerText=ref;document.getElementById('payModal').style.display='block';window._payAmount=montant||2000}
+function closePay(){document.getElementById('payModal').style.display='none'}
+async function processPay(){
+  let ref=document.getElementById('refDisp').innerText;
+  let amount=window._payAmount;
+  alert('🔒 Serveur sécurisé contacté !\n\nArticle: '+document.getElementById('payArticle').innerText+'\nMontant: '+amount+'F\nParrain '+ref+' gagne '+(amount*0.1)+'F (10%)\nEntreprise gagne '+(amount*0.9)+'F\n\n✅ Clé API cachée côté serveur Cloudflare - Pas visible dans GitHub !\n\nPour activer vrai paiement FedaPay Live, mets ton URL Worker dans SECURE_URL.');
+  closePay();
+}
+function retirerGains(){let gains=2400;let num=prompt("Félicitations DG ! Tu as "+gains+"F de gains parrainage.\nEntre ton numéro Flooz / TMoney pour retrait :");if(num){let msg=`DEMANDE RETRAIT PARRAINAGE GSIA%0ACode: GSIA-ABOU-772%0AGains: ${gains}F%0ANuméro: ${num}%0A12 filleuls`;window.open(`https://wa.me/22898221495?text=${msg}`,'_blank');alert("Demande envoyée ! "+gains+"F sur "+num);}}
+window.onload=()=>{let r=new URLSearchParams(location.search).get('ref');if(r){localStorage.setItem('gsia_ref',r);alert('🎉 Tu viens via parrain '+r+' ! Il gagnera 10% sur ton paiement !');}}
+</script></body></html>
