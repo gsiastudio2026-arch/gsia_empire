@@ -53,4 +53,22 @@ function processPay(){let r=document.getElementById('refDisp').innerText;let am=
 function sendChat(){let i=document.getElementById('chatInput');let t=i.value.trim();if(!t)return;let box=document.getElementById('chatBox');box.innerHTML+=`<div class="msg user">${t}</div>`;i.value='';setTimeout(()=>{box.innerHTML+=`<div class="msg bot">Reçu offline ! Message sauvé localement DG.</div>`;box.scrollTop=box.scrollHeight;},500);}
 function retirerGains(){let n=prompt('Numéro Flooz/TMoney :');if(n){window.open('https://wa.me/22898221495?text=RETRAIT%20GAINS%20'+n,'_blank');}}
 window.onload=()=>{let r=new URLSearchParams(location.search).get('ref');if(r){localStorage.setItem('gsia_ref',r);alert('Parrain '+r+' gagnera 10% !');}}
-</script></body></html>
+// ===== GSIA V122.1 - MODE OFFLINE ULTIME QUI NE BLOQUE JAMAIS =====
+const DB_NAME = 'GSIA_OFFLINE_V122';
+function saveOffline(key, data) {
+  try { localStorage.setItem(DB_NAME + '_' + key, JSON.stringify(data)); } catch(e) {}
+}
+function getOffline(key) {
+  try { return JSON.parse(localStorage.getItem(DB_NAME + '_' + key) || 'null'); } catch(e) { return null; }
+}
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw-gsia.js').then(() => {
+    console.log('✅ GSIA V122.1 OFFLINE READY');
+  }).catch(() => {});
+}
+window.addEventListener('offline', () => {
+  alert('Mode OFFLINE GSIA activé ✅ - Historique gardé');
+});
+</script>
+</body>
+</html>
