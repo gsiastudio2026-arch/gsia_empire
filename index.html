@@ -1,74 +1,503 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSIA V122.1 ULTIME + Historique Play Store</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#080f22;color:#e6e6e6;font-family:Inter,system-ui;padding-bottom:90px}
-.top{background:#ff1530;color:#fff;text-align:center;padding:7px;font-size:11px;font-weight:800;position:sticky;top:0;z-index:500}
-.h{padding:10px;display:flex;justify-content:space-between;align-items:center;background:#101a33;border-bottom:2px solid #ffb700}
-.tabs{display:flex;gap:5px;padding:8px;overflow-x:auto;background:#101a33;position:sticky;top:28px;z-index:400}
-.tab{padding:7px 12px;border-radius:20px;background:#1b274d;border:1px solid #2a3a6a;font-size:11px;white-space:nowrap;cursor:pointer}.tab.active{background:#ffb700;color:#000;font-weight:800}
-.card{background:#111d3d;border:1px solid #233365;border-radius:14px;padding:11px;margin:8px 8px}
-.btn{padding:10px;border:none;border-radius:22px;font-weight:800;cursor:pointer;width:100%;margin-top:7px}
-.btn-gold{background:linear-gradient(90deg,#ffb700,#ff8a00);color:#000}.btn-green{background:#0fa86a;color:#fff}.btn-dark{background:#1e2a4a;color:#fff}.btn-blue{background:#1e4bff;color:#fff}
-.secure{background:#001e14;border:1px solid #0fa86a;color:#0eff90;font-size:9px;padding:6px;border-radius:8px;text-align:center;margin:6px 0}
-.search{width:100%;padding:10px;border-radius:20px;border:1px solid #2a3a6a;background:#081020;color:#fff;margin:6px 0}
-.page{display:none;max-width:850px;margin:auto}.page.active{display:block}
-.bnav-bar{position:fixed;bottom:0;left:0;width:100%;height:62px;background:#0e1731;border-top:1px solid #233365;display:flex;justify-content:space-around;align-items:center;z-index:600}
-.bnav{font-size:9px;text-align:center;opacity:.6;cursor:pointer}.bnav.active{opacity:1;color:#ffb700;font-weight:800}
-.paybar{position:fixed;bottom:62px;left:0;width:100%;background:#ffb700;color:#000;padding:9px;text-align:center;font-weight:900;z-index:599;font-size:12px;cursor:pointer}
-.badge{font-size:9px;padding:3px 8px;border-radius:20px;font-weight:700;background:#1b274d}
-.chat-box{height:260px;overflow-y:auto;background:#000;border-radius:10px;padding:8px;margin:8px 0;border:1px solid #233365}
-.msg{margin:6px 0;padding:8px 10px;border-radius:12px;max-width:80%;font-size:13px}.msg.user{background:#ffb700;color:#000;margin-left:auto}.msg.bot{background:#1b274d;color:#fff}
-table{width:100%;font-size:12px;border-collapse:collapse;margin-top:8px}th,td{border:1px solid #233365;padding:6px;text-align:center}th{background:#1b274d;color:#ffb700}
-</style></head><body>
-<div class="top">V122.1 ULTIME - CHAT OFFLINE + PARRAINAGE 10% + HOPITAL + HISTORIQUE PLAY STORE - CLÉ CACHÉE</div>
-<div class="h"><div style="display:flex;gap:8px;align-items:center"><div style="width:40px;height:40px;border-radius:50%;background:#ffb700;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900">GS</div><div><b>GSIA STUDIO TOGO V122.1</b><br><small>DG BAH ARIZIKI - Empire Complet</small></div></div><span class="badge" style="background:#0fa86a">● Historique OK</span></div>
-<div class="tabs">
-<span class="tab active" onclick="showP('ecole')">École Matricule</span><span class="tab" onclick="showP('business')">Business</span><span class="tab" onclick="showP('logistique')">Colis 🔔</span><span class="tab" onclick="showP('chat')">Chat Offline</span><span class="tab" onclick="showP('parrain')">Parrain 10%</span><span class="tab" onclick="showP('hopital')">Hôpital</span><span class="tab" onclick="showP('historique')" style="background:#000;color:#ffb700;border:1px solid #ffb700">📜 Historique</span>
-</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#06152f">
+  <meta name="description" content="GSIA EMPIRE : éducation, intelligence artificielle, services et entrepreneuriat.">
+  <title>GSIA EMPIRE V122.2 | AÏNA</title>
 
-<div id="ecole" class="page active"><div class="card"><h2>👨‍👩‍👧 Parent Suit Enfant Matricule</h2><input class="search" id="matricule" placeholder="Matricule Ex: GSIA-2026-0123"><button class="btn btn-green" onclick="document.getElementById('resultEleve').style.display='block'">🔍 SUIVRE MON ENFANT</button><div id="resultEleve" style="display:none;margin-top:10px;background:#000;padding:10px;border-radius:10px">Kossi Traoré CE2 - Maths 14/20 Bien, Français 09/20 Faible <button class="btn btn-gold" onclick="pay('Soutien 2000F','2000')" style="margin-top:8px">Payer 2000F</button></div></div></div>
-<div id="chat" class="page"><div class="card"><h2>💬 Chat Offline Sans Internet</h2><div class="secure">🔒 Mode Offline - localStorage</div><div class="chat-box" id="chatBox"><div class="msg bot">Bonjour DG ! Chat Offline actif 🤖 Tape ton message !</div></div><div style="display:flex;gap:6px"><input class="search" id="chatInput" placeholder="Tape ici..." style="flex:1" onkeypress="if(event.key==='Enter')sendChat()"><button class="btn btn-gold" style="width:auto" onclick="sendChat()">Envoyer</button></div></div></div>
-<div id="parrain" class="page"><div class="card" style="border-color:#0fa86a"><h2 style="color:#0eff90">🤝 Parrainage 10% Double Gain</h2><b>Code : <span style="color:#0eff90">GSIA-ABOU-772</span></b><input class="search" id="refLink" value="https://gsiastudio2026-arch.github.io/gsia_empire/?ref=GSIA-ABOU-772" readonly><button class="btn btn-green" onclick="navigator.clipboard.writeText(document.getElementById('refLink').value);alert('Lien copié')">COPIER LIEN 10%</button><table><tr><th>Invités</th><th>Toi 10%</th><th>Entreprise 90%</th></tr><tr><td>1</td><td>200F</td><td>1800F</td></tr><tr><td>12</td><td>2400F</td><td>21600F</td></tr><tr><td>100</td><td>20000F</td><td>180000F</td></tr></table><button class="btn btn-green" onclick="retirerGains()" style="margin-top:8px">RETIRER GAINS → Flooz/TMoney 💰</button></div></div>
-<div id="hopital" class="page"><div class="card" style="border-color:#ff1530"><h2>🏥 GSIA Hôpital Portail</h2><input class="search" id="matH" placeholder="Matricule GSIA-HOP-2026-001"><button class="btn btn-green" onclick="document.getElementById('resultH').style.display='block'">🔍 DOSSIER MÉDICAL</button><div id="resultH" style="display:none;margin-top:10px;background:#000;padding:10px;border-radius:10px">Patient Kossi Agbé - RDV 25/10/2026 - Facture 5000F <button class="btn btn-gold" onclick="pay('Facture Hopital 5000F','5000')" style="margin-top:8px">Payer 5000F FedaPay</button></div></div></div>
-<div id="business" class="page"><div class="card"><h2>Business Dangote - Visibilité Extérieure</h2><button class="btn btn-gold" onclick="pay('MATCH Dangote 2000F','2000')">MATCH DIRECT 2000F</button></div></div>
-<div id="logistique" class="page"><div class="card"><h2>📦 Suivi Colis + Sonnerie 🔔</h2><button class="btn btn-green" onclick="document.getElementById('sonnerie').play();alert('Ding Ding ! Colis arrivé Assigamé !')">🔔 Tester Sonnerie</button><audio id="sonnerie" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio></div></div>
+  <style>
+    :root {
+      --fond: #06152f;
+      --carte: #102747;
+      --bleu: #00d9ff;
+      --or: #f5c451;
+      --blanc: #ffffff;
+      --texte: #d8e7f7;
+    }
 
-<!-- HISTORIQUE PAGE -->
-<div id="historique" class="page"><div class="card" style="border-color:#ffb700"><span class="badge" style="background:#000;color:#ffb700">📜 HISTORIQUE COMME PLAY STORE</span><h2>GSIA - Mises à Jour</h2><div class="secure">🔒 Toutes versions sécurisées - Lien principal = toujours ultime</div>
-<div class="card" style="background:#000;border-color:#0fa86a"><b style="color:#0eff90">V122.1 ACTUELLE - 22 Oct 2026 - ULTIME</b> <span class="badge" style="background:#0fa86a">ACTUELLE</span><br><small>• Chat Offline localStorage • Parrainage 10% progressif 200F/1800F • Hôpital Portail GSIA-HOP-2026-001 • Historique Play Store</small><br><button class="btn btn-gold" style="width:auto" onclick="showP('ecole')">Ouvrir V122.1</button></div>
-<div class="card" style="background:#111"><b>V122 - 22 Oct 2026</b><br><small>Chat Offline + Hôpital + Parrainage détaillé</small><br><button class="btn btn-dark" style="width:auto" onclick="window.open('./versions/v122.html','_blank')">Voir V122</button></div>
-<div class="card" style="background:#111"><b>V121 - 22 Oct 2026</b><br><small>Gestion École Matricule + Tontine Reçu FP-TONTINE-772 + Zemidjan + Sonnerie Assigamé</small><br><button class="btn btn-dark" style="width:auto" onclick="window.open('./versions/v121.html','_blank')">Voir V121</button></div>
-<div class="card" style="background:#111"><b>V120 - 22 Oct 2026</b><br><small>Primaire APC 24 fiches + Jeux 500F + Business Dangote</small><br><button class="btn btn-dark" style="width:auto" onclick="window.open('./versions/v120.html','_blank')">Voir V120</button></div>
-<div class="card" style="background:#111"><b>V119 - 21 Oct 2026</b><br><small>Niveaux pédagogiques + Fiches 5ème/4ème</small><br><button class="btn btn-dark" style="width:auto" onclick="window.open('./versions/v119.html','_blank')">Voir V119</button></div>
-<div class="card" style="background:#111"><b>V118 - 20 Oct 2026</b><br><small>Première version Business + École</small><br><button class="btn btn-dark" style="width:auto" onclick="window.open('./versions/v118.html','_blank')">Voir V118</button></div>
-<div class="card" style="background:#111"><b>V113 - V117 Archives</b><br><button class="btn btn-dark" style="width:auto" onclick="window.open('./versions/v113.html','_blank')">V113</button> <button class="btn btn-dark" style="width:auto" onclick="window.open('./versions/v117.html','_blank')">V117</button></div>
-<div style="background:#0e2a1a;padding:10px;border-radius:10px;margin-top:10px;font-size:11px">✔️ https://gsiastudio2026-arch.github.io/gsia_empire/ = TOUJOURS V122.1 ULTIME<br>✔️ /versions/vXXX.html = anciennes versions gardées<br>✔️ Comme Play Store</div></div></div>
+    * { box-sizing: border-box; }
 
-<div class="paybar" onclick="pay('Pack V122.1 - 2000F','2000')">🔒 PAYER 2000F - FedaPay Sécurisé Clé Cachée</div>
-<div class="bnav-bar"><div class="bnav active" onclick="showP('ecole')">🏫<br>École</div><div class="bnav" onclick="showP('chat')">💬<br>Chat</div><div class="bnav" onclick="showP('parrain')">🤝<br>Parrain</div><div class="bnav" onclick="showP('hopital')">🏥<br>Hôpital</div><div class="bnav" onclick="showP('historique')">📜<br>Historique</div></div>
-<div id="payModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.93);z-index:999;padding:15px"><div class="card" style="max-width:400px;margin:20px auto"><h3 style="color:#0eff90">🔒 FedaPay LIVE Clé Cachée</h3><div class="secure">Serveur Cloudflare + 10% Parrainage</div><b>Article: <span id="payArticle"></span></b><br><small>Parrain: <span id="refDisp">GSIA-ABOU-772</span> → 10%</small><br><br><input class="search" placeholder="Nom"><input class="search" placeholder="Téléphone"><button class="btn btn-gold" onclick="processPay()">PAYER TMoney/Flooz Sécurisé</button><button class="btn btn-dark" onclick="document.getElementById('payModal').style.display='none'">Annuler</button></div></div>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fond);
+      color: var(--blanc);
+    }
+
+    header {
+      padding: 24px 16px;
+      text-align: center;
+      background: linear-gradient(135deg, #06152f, #123d68);
+      border-bottom: 2px solid var(--bleu);
+    }
+
+    .logo {
+      color: var(--bleu);
+      font-size: clamp(25px, 5vw, 38px);
+      font-weight: 900;
+      text-shadow: 0 0 15px #00d9ff88;
+      margin: 0;
+    }
+
+    header p { color: var(--texte); }
+
+    .version {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid var(--or);
+      border-radius: 20px;
+      color: var(--or);
+      font-size: 12px;
+    }
+
+    .hero {
+      padding: 30px 16px;
+      text-align: center;
+    }
+
+    .hero h2 { color: var(--or); }
+
+    .hero p {
+      color: var(--texte);
+      line-height: 1.6;
+    }
+
+    .conteneur {
+      width: min(1100px, 94%);
+      margin: auto;
+      padding-bottom: 35px;
+    }
+
+    .titre-section {
+      color: var(--bleu);
+      border-bottom: 1px solid #24466c;
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .carte {
+      background: var(--carte);
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid #24466c;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .carte:hover {
+      transform: translateY(-3px);
+      border-color: var(--bleu);
+    }
+
+    .icone { font-size: 32px; }
+
+    .carte h3 { color: var(--or); }
+
+    .carte p {
+      color: var(--texte);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    button, .bouton {
+      display: inline-block;
+      border: 0;
+      border-radius: 8px;
+      padding: 11px 15px;
+      background: var(--bleu);
+      color: #06152f;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    button:hover, .bouton:hover { opacity: .85; }
+
+    .aina {
+      border: 1px solid var(--bleu);
+      box-shadow: 0 0 18px #00d9ff18;
+    }
+
+    #discussion {
+      height: 230px;
+      overflow-y: auto;
+      background: #06152f;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+    }
+
+    .message {
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .utilisateur {
+      background: #174b72;
+      text-align: right;
+    }
+
+    .assistant {
+      background: #173b32;
+      border-left: 3px solid #54dfaa;
+    }
+
+    .ligne-chat {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ligne-chat input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #42607f;
+      background: #081a34;
+      color: white;
+    }
+
+    .etat {
+      font-size: 12px;
+      color: #a9c1d8;
+    }
+
+    .avertissement {
+      font-size: 12px;
+      color: #f5c451;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      background: #030d1e;
+      color: var(--texte);
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      .ligne-chat { flex-direction: column; }
+      .ligne-chat button { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1 class="logo">GSIA EMPIRE</h1>
+  <p>Innovation · Éducation · Intelligence artificielle</p>
+  <span class="version">VERSION V122.2</span>
+</header>
+
+<section class="hero">
+  <h2>Bienvenue dans ton empire numérique 👑</h2>
+  <p>
+    Un espace pour apprendre, entreprendre, suivre tes activités
+    et découvrir des solutions numériques.
+  </p>
+</section>
+
+<main class="conteneur">
+
+  <h2 class="titre-section">🤖 TALKTO – AÏNA</h2>
+
+  <section class="carte aina">
+    <h3>💠 AÏNA, ton assistante numérique</h3>
+    <p>
+      Pose une question, demande une idée de projet ou découvre
+      les services de GSIA EMPIRE.
+    </p>
+
+    <div id="etat" class="etat">Mode de démonstration locale disponible.</div>
+
+    <div id="discussion" aria-live="polite">
+      <div class="message assistant">
+        Bonjour ! Je suis AÏNA. Comment puis-je t'aider ?
+      </div>
+    </div>
+
+    <form id="form-chat" class="ligne-chat">
+      <input
+        id="question"
+        type="text"
+        placeholder="Écris ton message ici..."
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <p class="avertissement">
+      Cette version fournit des réponses locales prédéfinies.
+      Une IA générative réelle nécessite une connexion à un service IA.
+    </p>
+  </section>
+
+  <h2 class="titre-section">📚 Éducation et famille</h2>
+
+  <section class="grille">
+    <article class="carte">
+      <div class="icone">👨‍👩‍👧</div>
+      <h3>Parent Suit Enfant</h3>
+      <p>
+        Espace destiné au suivi scolaire, aux résultats,
+        aux devoirs et à la progression des enfants.
+      </p>
+      <button onclick="ouvrirService('Parent Suit Enfant')">
+        Découvrir
+      </button>
+    </article>
+
+    <article class="carte">
+      <div class="icone">📘</div>
+      <h3>Guide pédagogique</h3>
+      <p>
+        Accès aux supports pédagogiques et aux documents
+        de préparation des cours au format Word ou PDF.
+      </p>
+      <button onclick="ouvrirService('Guide pédagogique Word/PDF')">
+        Consulter
+      </button>
+    </article>
+  </section>
+
+  <h2 class="titre-section">💼 Business et logistique</h2>
+
+  <section class="grille">
+    <article class="carte">
+      <div class="icone">📈</div>
+      <h3>Business Dangote</h3>
+      <p>
+        Espace pour organiser des idées commerciales,
+        étudier des projets et préparer un plan d'affaires.
+      </p>
+      <button onclick="ouvrirService('Business Dangote')">
+        Explorer
+      </button>
+    </article>
+
+    <article class="carte">
+      <div class="icone">📦</div>
+      <h3>Suivi de colis</h3>
+      <p>
+        Prépare le suivi de tes expéditions grâce au numéro
+        de suivi fourni par ton transporteur.
+      </p>
+      <button onclick="suiviColis()">
+        Suivre un colis
+      </button>
+    </article>
+  </section>
+
+  <h2 class="titre-section">🛠️ Services techniques</h2>
+
+  <section class="grille">
+    <article class="carte">
+      <div class="icone">☀️</div>
+      <h3>Électricité & solaire</h3>
+      <p>
+        Informations générales sur les installations électriques,
+        les panneaux solaires et l'efficacité énergétique.
+      </p>
+      <button onclick="ouvrirService('Électricité et solaire')">
+        Découvrir
+      </button>
+    </article>
+
+    <article class="carte">
+      <div class="icone">🚰</div>
+      <h3>Plomberie</h3>
+      <p>
+        Découvre les équipements, les matériaux et les bases
+        de l'entretien des installations sanitaires.
+      </p>
+      <button onclick="ouvrirService('Plomberie')">
+        Découvrir
+      </button>
+    </article>
+
+    <article class="carte">
+      <div class="icone">⚙️</div>
+      <h3>Soudure & métallerie</h3>
+      <p>
+        Informations sur les outils, les matériaux,
+        les assemblages et la sécurité professionnelle.
+      </p>
+      <button onclick="ouvrirService('Soudure et métallerie')">
+        Découvrir
+      </button>
+    </article>
+
+    <article class="carte">
+      <div class="icone">🧱</div>
+      <h3>Maçonnerie</h3>
+      <p>
+        Découvre les matériaux de construction, les outils
+        et les principales étapes d'un chantier.
+      </p>
+      <button onclick="ouvrirService('Maçonnerie')">
+        Découvrir
+      </button>
+    </article>
+  </section>
+
+  <h2 class="titre-section">📱 Fonctionnement hors connexion</h2>
+
+  <section class="carte">
+    <h3>Ton espace numérique</h3>
+    <p id="connexion">Vérification de la connexion...</p>
+    <p>
+      Les pages déjà chargées peuvent être disponibles hors ligne
+      si le service worker et son cache ont été correctement installés.
+    </p>
+    <button onclick="verifierConnexion()">Vérifier la connexion</button>
+  </section>
+
+</main>
+
+<footer>
+  <strong>GSIA EMPIRE</strong>
+  <p>Génie Savant d'IA · Formation · Création · Innovation</p>
+  <p>© <span id="annee"></span> GSIA Studio</p>
+</footer>
+
 <script>
-function showP(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.bnav').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));window.scrollTo(0,0)}
-function pay(a,m){document.getElementById('payArticle').innerText=a;let ref=new URLSearchParams(location.search).get('ref')||localStorage.getItem('gsia_ref')||'GSIA-ABOU-772';if(new URLSearchParams(location.search).get('ref'))localStorage.setItem('gsia_ref',ref);document.getElementById('refDisp').innerText=ref;document.getElementById('payModal').style.display='block';window._payAmount=parseInt(m)||2000}
-function processPay(){let r=document.getElementById('refDisp').innerText;let am=window._payAmount;alert('🔒 Serveur sécurisé !\n'+document.getElementById('payArticle').innerText+'\n'+am+'F\nParrain '+r+' gagne '+(am*0.1)+'F\nEntreprise '+(am*0.9)+'F');document.getElementById('payModal').style.display='none';}
-function sendChat(){let i=document.getElementById('chatInput');let t=i.value.trim();if(!t)return;let box=document.getElementById('chatBox');box.innerHTML+=`<div class="msg user">${t}</div>`;i.value='';setTimeout(()=>{box.innerHTML+=`<div class="msg bot">Reçu offline ! Message sauvé localement DG.</div>`;box.scrollTop=box.scrollHeight;},500);}
-function retirerGains(){let n=prompt('Numéro Flooz/TMoney :');if(n){window.open('https://wa.me/22898221495?text=RETRAIT%20GAINS%20'+n,'_blank');}}
-window.onload=()=>{let r=new URLSearchParams(location.search).get('ref');if(r){localStorage.setItem('gsia_ref',r);alert('Parrain '+r+' gagnera 10% !');}}
-// ===== GSIA V122.1 - MODE OFFLINE ULTIME QUI NE BLOQUE JAMAIS =====
-const DB_NAME = 'GSIA_OFFLINE_V122';
-function saveOffline(key, data) {
-  try { localStorage.setItem(DB_NAME + '_' + key, JSON.stringify(data)); } catch(e) {}
-}
-function getOffline(key) {
-  try { return JSON.parse(localStorage.getItem(DB_NAME + '_' + key) || 'null'); } catch(e) { return null; }
-}
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw-gsia.js').then(() => {
-    console.log('✅ GSIA V122.1 OFFLINE READY');
-  }).catch(() => {});
-}
-window.addEventListener('offline', () => {
-  alert('Mode OFFLINE GSIA activé ✅ - Historique gardé');
-});
+  const discussion = document.getElementById("discussion");
+  const formulaire = document.getElementById("form-chat");
+  const champ = document.getElementById("question");
+  const etat = document.getElementById("etat");
+
+  document.getElementById("annee").textContent =
+    new Date().getFullYear();
+
+  function ajouterMessage(texte, classe) {
+    const element = document.createElement("div");
+    element.className = "message " + classe;
+    element.textContent = texte;
+    discussion.appendChild(element);
+    discussion.scrollTop = discussion.scrollHeight;
+  }
+
+  function reponseAina(texte) {
+    const q = texte.toLowerCase();
+
+    if (q.includes("bonjour") || q.includes("salut")) {
+      return "Bonjour ! Bienvenue dans GSIA EMPIRE. Que souhaites-tu découvrir ?";
+    }
+
+    if (q.includes("parent") || q.includes("enfant") ||
+        q.includes("école") || q.includes("scolaire")) {
+      return "Le service Parent Suit Enfant est prévu pour faciliter le suivi scolaire. Les données réelles et les comptes utilisateurs doivent être configurés.";
+    }
+
+    if (q.includes("guide") || q.includes("pédagogique") ||
+        q.includes("word") || q.includes("pdf")) {
+      return "Le Guide pédagogique est prévu pour accéder aux ressources Word et PDF. Les fichiers doivent être ajoutés à la plateforme.";
+    }
+
+    if (q.includes("colis") || q.includes("suivi")) {
+      return "Pour suivre un colis, prépare le numéro de suivi et le nom du transporteur. Tu pourras ensuite consulter le site officiel de ce transporteur.";
+    }
+
+    if (q.includes("business") || q.includes("entreprise") ||
+        q.includes("argent") || q.includes("commerce")) {
+      return "Pour préparer un projet commercial, définis le besoin du client, les coûts, les fournisseurs, le prix de vente et les bénéfices prévisionnels.";
+    }
+
+    if (q.includes("solaire") || q.includes("électricité")) {
+      return "Pour un projet électrique ou solaire, évalue les besoins énergétiques et fais vérifier le dimensionnement et la sécurité par un professionnel qualifié.";
+    }
+
+    if (q.includes("plomberie")) {
+      return "La plomberie concerne notamment les canalisations, les raccords, les robinets et l'évacuation des eaux. Quel aspect souhaites-tu étudier ?";
+    }
+
+    if (q.includes("soudure") || q.includes("métallerie")) {
+      return "La soudure et la métallerie exigent des équipements de protection et une formation adaptée. Quel ouvrage souhaites-tu découvrir ?";
+    }
+
+    if (q.includes("maçonnerie") || q.includes("construction")) {
+      return "Un projet de maçonnerie commence par l'étude du terrain, les plans, le choix des matériaux et le respect des règles de construction.";
+    }
+
+    if (q.includes("aide") || q.includes("service")) {
+      return "Je peux te présenter les services : éducation, guide pédagogique, business, suivi de colis, électricité et solaire, plomberie, soudure et maçonnerie.";
+    }
+
+    return "Je suis AÏNA, dans ma version locale de démonstration. Ma base de réponses est limitée. Une connexion à un service d'intelligence artificielle est nécessaire pour répondre librement à des questions variées.";
+  }
+
+  formulaire.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const texte = champ.value.trim();
+    if (!texte) return;
+
+    ajouterMessage(texte, "utilisateur");
+    champ.value = "";
+
+    ajouterMessage(reponseAina(texte), "assistant");
+  });
+
+  function ouvrirService(nom) {
+    ajouterMessage(
+      "Service sélectionné : " + nom +
+      ". Son module complet doit encore être configuré.",
+      "assistant"
+    );
+
+    discussion.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function suiviColis() {
+    const numero = prompt("Entre le numéro de suivi de ton colis :");
+
+    if (numero && numero.trim()) {
+      alert(
+        "Numéro enregistré pour consultation : " + numero.trim() +
+        "\n\nPour connaître le statut réel, consulte le site officiel de ton transporteur."
+      );
+    }
+  }
+
+  function verifierConnexion() {
+    document.getElementById("connexion").textContent =
+      navigator.onLine
+        ? "Connexion Internet détectée."
+        : "Hors connexion : seules les fonctionnalités locales sont disponibles.";
+  }
+
+  window.addEventListener("online", verifierConnexion);
+  window.addEventListener("offline", verifierConnexion);
+  verifierConnexion();
+
+  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker.register("./sw-gsia.js")
+        .then(function() {
+          etat.textContent =
+            "Service worker enregistré. La disponibilité hors ligne dépend du cache configuré.";
+        })
+        .catch(function() {
+          etat.textContent =
+            "Mode local disponible. Vérifie le fichier sw-gsia.js pour activer le cache hors ligne.";
+        });
+    });
+  }
 </script>
+
 </body>
 </html>
+
