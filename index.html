@@ -3,501 +3,988 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#06152f">
-  <meta name="description" content="GSIA EMPIRE : éducation, intelligence artificielle, services et entrepreneuriat.">
-  <title>GSIA EMPIRE V122.2 | AÏNA</title>
+  <meta name="theme-color" content="#07152e">
+  <title>GSIA EMPIRE V122.3 - AÏNA TALKTO</title>
 
   <style>
     :root {
-      --fond: #06152f;
-      --carte: #102747;
-      --bleu: #00d9ff;
-      --or: #f5c451;
-      --blanc: #ffffff;
-      --texte: #d8e7f7;
+      --blue: #078bff;
+      --green: #00d084;
+      --red: #ff334f;
+      --gold: #ffd166;
+      --bg: #061226;
+      --panel: #0c1e3b;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
+      min-height: 100vh;
+      padding: 18px;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--fond);
-      color: var(--blanc);
+      color: #fff;
+      background:
+        radial-gradient(ellipse at top, #12386a 0%, transparent 55%),
+        linear-gradient(145deg, #030817, #0a1934 65%, #03101d);
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
     }
 
     header {
-      padding: 24px 16px;
       text-align: center;
-      background: linear-gradient(135deg, #06152f, #123d68);
-      border-bottom: 2px solid var(--bleu);
+      padding: 18px 8px;
     }
 
-    .logo {
-      color: var(--bleu);
-      font-size: clamp(25px, 5vw, 38px);
+    .brand {
+      color: var(--gold);
+      font-size: clamp(25px, 6vw, 38px);
       font-weight: 900;
-      text-shadow: 0 0 15px #00d9ff88;
-      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 0 0 18px #ffbd4a55;
     }
 
-    header p { color: var(--texte); }
-
-    .version {
-      display: inline-block;
-      padding: 6px 12px;
-      border: 1px solid var(--or);
-      border-radius: 20px;
-      color: var(--or);
-      font-size: 12px;
-    }
-
-    .hero {
-      padding: 30px 16px;
-      text-align: center;
-    }
-
-    .hero h2 { color: var(--or); }
-
-    .hero p {
-      color: var(--texte);
-      line-height: 1.6;
-    }
-
-    .conteneur {
-      width: min(1100px, 94%);
-      margin: auto;
-      padding-bottom: 35px;
-    }
-
-    .titre-section {
-      color: var(--bleu);
-      border-bottom: 1px solid #24466c;
-      padding-bottom: 10px;
-      margin-top: 30px;
-    }
-
-    .grille {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
-
-    .carte {
-      background: var(--carte);
-      padding: 20px;
-      border-radius: 14px;
-      border: 1px solid #24466c;
-      transition: transform .2s, border-color .2s;
-    }
-
-    .carte:hover {
-      transform: translateY(-3px);
-      border-color: var(--bleu);
-    }
-
-    .icone { font-size: 32px; }
-
-    .carte h3 { color: var(--or); }
-
-    .carte p {
-      color: var(--texte);
-      line-height: 1.5;
+    .subtitle {
+      color: #a9c9f4;
+      margin-top: 8px;
       font-size: 14px;
     }
 
-    button, .bouton {
+    .version {
       display: inline-block;
-      border: 0;
-      border-radius: 8px;
-      padding: 11px 15px;
-      background: var(--bleu);
-      color: #06152f;
+      margin-top: 14px;
+      padding: 7px 13px;
+      border: 1px solid #00d084;
+      border-radius: 20px;
+      color: #65ffc0;
+      font-size: 12px;
       font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
     }
 
-    button:hover, .bouton:hover { opacity: .85; }
-
-    .aina {
-      border: 1px solid var(--bleu);
-      box-shadow: 0 0 18px #00d9ff18;
+    .card {
+      background: linear-gradient(150deg, #10294b, #07152a);
+      border: 1px solid #2c527c;
+      border-radius: 24px;
+      padding: 22px;
+      margin: 16px 0;
+      box-shadow: 0 15px 45px #0005;
     }
 
-    #discussion {
-      height: 230px;
-      overflow-y: auto;
-      background: #06152f;
-      padding: 12px;
-      border-radius: 8px;
-      margin: 12px 0;
+    .card h2 {
+      text-align: center;
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 23px;
     }
 
-    .message {
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 8px;
-      line-height: 1.5;
+    .description {
+      color: #c4d7f2;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Robot AÏNA */
+
+    .robot-area {
+      display: flex;
+      justify-content: center;
+      margin: 24px auto 12px;
+    }
+
+    .robot {
+      width: 126px;
+      height: 126px;
+      border-radius: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 17px;
+      background: linear-gradient(145deg, #173d70, #07142a);
+      border: 2px solid #218bff;
+      box-shadow: 0 0 28px #078bff44;
+      transition: .3s;
+    }
+
+    .antenna {
+      position: relative;
+      width: 4px;
+      height: 13px;
+      background: #57d5ff;
+      margin-top: -12px;
+    }
+
+    .antenna::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: -7px;
+      left: -3px;
+      background: var(--gold);
+      box-shadow: 0 0 12px var(--gold);
+    }
+
+    .eyes {
+      display: flex;
+      gap: 22px;
+    }
+
+    .eye {
+      width: 16px;
+      height: 21px;
+      background: #57d5ff;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00aeff;
+    }
+
+    .mouth {
+      width: 36px;
+      height: 8px;
+      border-radius: 0 0 18px 18px;
+      background: #57d5ff;
+    }
+
+    .robot.listening {
+      border-color: var(--green);
+      box-shadow: 0 0 30px #00d08499;
+      animation: listening 1s infinite alternate;
+    }
+
+    .robot.speaking {
+      border-color: var(--gold);
+      box-shadow: 0 0 35px #ffd16699;
+      animation: speaking .35s infinite alternate;
+    }
+
+    .robot.speaking .mouth {
+      animation: talking .22s infinite alternate;
+    }
+
+    @keyframes listening {
+      from { transform: scale(1); }
+      to { transform: scale(1.04); }
+    }
+
+    @keyframes speaking {
+      from { transform: translateY(0); }
+      to { transform: translateY(-4px); }
+    }
+
+    @keyframes talking {
+      from { height: 5px; }
+      to { height: 17px; }
+    }
+
+    .robot-name {
+      text-align: center;
+      color: #8edbff;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    /* Ondes sonores */
+
+    .waves {
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin: 10px auto;
+    }
+
+    .waves span {
+      width: 5px;
+      height: 9px;
+      background: var(--blue);
+      border-radius: 5px;
+      opacity: .35;
+    }
+
+    .waves.active span {
+      opacity: 1;
+      animation: wave .65s infinite ease-in-out alternate;
+      box-shadow: 0 0 8px #078bff;
+    }
+
+    .waves span:nth-child(2n) {
+      animation-delay: .15s;
+    }
+
+    .waves span:nth-child(3n) {
+      animation-delay: .3s;
+    }
+
+    @keyframes wave {
+      from { height: 8px; }
+      to { height: 43px; }
+    }
+
+    /* Statut et résultats */
+
+    .status {
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      color: #a9c9f4;
+      min-height: 24px;
+      margin: 14px 0;
+    }
+
+    .status.listening {
+      color: #56ffc0;
+    }
+
+    .status.speaking {
+      color: var(--gold);
+    }
+
+    .transcript,
+    .answer {
+      padding: 15px;
+      background: #020b19aa;
+      border: 1px solid #29476b;
+      border-radius: 14px;
+      margin-top: 12px;
+      line-height: 1.65;
       overflow-wrap: anywhere;
     }
 
-    .utilisateur {
-      background: #174b72;
-      text-align: right;
+    .transcript {
+      color: #c6dcfa;
+      min-height: 52px;
     }
 
-    .assistant {
-      background: #173b32;
-      border-left: 3px solid #54dfaa;
+    .answer {
+      color: #fff;
+      min-height: 65px;
+      white-space: pre-wrap;
     }
 
-    .ligne-chat {
-      display: flex;
-      gap: 8px;
+    .label {
+      font-size: 12px;
+      font-weight: bold;
+      color: #73caff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
     }
 
-    .ligne-chat input {
-      flex: 1;
-      min-width: 0;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #42607f;
-      background: #081a34;
+    /* Boutons */
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: none;
+      transition: transform .15s, filter .15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:active {
+      transform: scale(.97);
+    }
+
+    button:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    .mic-button {
+      display: block;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      margin: 20px auto;
       color: white;
+      background: linear-gradient(145deg, #ff5267, #d6002a);
+      border: 4px solid #ff94a2;
+      box-shadow: 0 0 25px #ff334f55;
+      font-size: 37px;
     }
 
-    .etat {
-      font-size: 12px;
-      color: #a9c1d8;
+    .mic-button.listening {
+      background: linear-gradient(145deg, #00e69a, #008d59);
+      border-color: #8dffd2;
+      box-shadow: 0 0 35px #00d08499;
+      animation: listening 1s infinite alternate;
     }
 
-    .avertissement {
+    .mic-caption {
+      text-align: center;
+      color: #c4d7f2;
+      font-size: 13px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 17px;
+    }
+
+    .action-button {
+      flex: 1 1 130px;
+      padding: 13px 15px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      background: #174779;
+      border: 1px solid #397ab9;
+    }
+
+    .action-button.primary {
+      background: linear-gradient(100deg, #007bff, #2458e8);
+      border: none;
+    }
+
+    .action-button.stop {
+      background: #612039;
+      border-color: #b83b5e;
+    }
+
+    .examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .example {
+      flex: 1 1 140px;
+      padding: 11px;
+      color: #d6eaff;
+      background: #10284a;
+      border: 1px solid #315477;
+      border-radius: 10px;
+      font-size: 13px;
+    }
+
+    .notice {
+      padding: 12px;
+      background: #302813;
+      border: 1px solid #8b7130;
+      color: #ffe7a1;
+      border-radius: 12px;
       font-size: 12px;
-      color: #f5c451;
-      line-height: 1.5;
+      line-height: 1.6;
+      margin-top: 14px;
     }
 
     footer {
       text-align: center;
-      padding: 25px 15px;
-      background: #030d1e;
-      color: var(--texte);
-      font-size: 13px;
+      padding: 20px 8px;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #819bbd;
     }
 
-    @media (max-width: 480px) {
-      .ligne-chat { flex-direction: column; }
-      .ligne-chat button { width: 100%; }
+    @media (max-width: 400px) {
+      body { padding: 10px; }
+      .card { padding: 16px; }
+      .mic-button { width: 100px; height: 100px; }
     }
   </style>
 </head>
 
 <body>
+  <main class="container">
 
-<header>
-  <h1 class="logo">GSIA EMPIRE</h1>
-  <p>Innovation · Éducation · Intelligence artificielle</p>
-  <span class="version">VERSION V122.2</span>
-</header>
-
-<section class="hero">
-  <h2>Bienvenue dans ton empire numérique 👑</h2>
-  <p>
-    Un espace pour apprendre, entreprendre, suivre tes activités
-    et découvrir des solutions numériques.
-  </p>
-</section>
-
-<main class="conteneur">
-
-  <h2 class="titre-section">🤖 TALKTO – AÏNA</h2>
-
-  <section class="carte aina">
-    <h3>💠 AÏNA, ton assistante numérique</h3>
-    <p>
-      Pose une question, demande une idée de projet ou découvre
-      les services de GSIA EMPIRE.
-    </p>
-
-    <div id="etat" class="etat">Mode de démonstration locale disponible.</div>
-
-    <div id="discussion" aria-live="polite">
-      <div class="message assistant">
-        Bonjour ! Je suis AÏNA. Comment puis-je t'aider ?
+    <header>
+      <div class="brand">GSIA EMPIRE</div>
+      <div class="subtitle">
+        L'intelligence numérique au service de vos projets
       </div>
-    </div>
+      <div class="version">VERSION V122.3 VOCALE</div>
+    </header>
 
-    <form id="form-chat" class="ligne-chat">
-      <input
-        id="question"
-        type="text"
-        placeholder="Écris ton message ici..."
-        autocomplete="off"
-        required
-      >
-      <button type="submit">Envoyer</button>
-    </form>
+    <section class="card">
+      <h2>🤖 AÏNA TALKTO</h2>
 
-    <p class="avertissement">
-      Cette version fournit des réponses locales prédéfinies.
-      Une IA générative réelle nécessite une connexion à un service IA.
-    </p>
-  </section>
-
-  <h2 class="titre-section">📚 Éducation et famille</h2>
-
-  <section class="grille">
-    <article class="carte">
-      <div class="icone">👨‍👩‍👧</div>
-      <h3>Parent Suit Enfant</h3>
-      <p>
-        Espace destiné au suivi scolaire, aux résultats,
-        aux devoirs et à la progression des enfants.
+      <p class="description">
+        Bonjour ! Je suis AÏNA, ton assistante vocale.
+        Appuie sur le microphone, parle-moi en français
+        et écoute ma réponse.
       </p>
-      <button onclick="ouvrirService('Parent Suit Enfant')">
-        Découvrir
-      </button>
-    </article>
 
-    <article class="carte">
-      <div class="icone">📘</div>
-      <h3>Guide pédagogique</h3>
-      <p>
-        Accès aux supports pédagogiques et aux documents
-        de préparation des cours au format Word ou PDF.
+      <div class="robot-area">
+        <div class="robot" id="robot" aria-label="Robot AÏNA">
+          <div class="antenna"></div>
+          <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+
+      <div class="robot-name">A Ï N A</div>
+
+      <div class="waves" id="waves" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span>
+      </div>
+
+      <div class="status" id="status" role="status" aria-live="polite">
+        Prête à vous écouter.
+      </div>
+
+      <button
+        type="button"
+        class="mic-button"
+        id="micButton"
+        aria-label="Commencer à parler"
+        title="Appuyer pour parler">
+        🎤
+      </button>
+
+      <div class="mic-caption" id="micCaption">
+        Appuie sur le micro rouge pour parler
+      </div>
+
+      <div class="transcript">
+        <div class="label">📝 Ce que tu as dit</div>
+        <div id="transcript">En attente de votre message...</div>
+      </div>
+
+      <div class="answer" aria-live="polite">
+        <div class="label">💬 Réponse d'AÏNA</div>
+        <div id="answer">Bonjour ! Comment puis-je t'aider ?</div>
+      </div>
+
+      <div class="actions">
+        <button class="action-button primary" id="speakButton">
+          🔊 Faire parler AÏNA
+        </button>
+
+        <button class="action-button stop" id="stopButton">
+          ⏹ Arrêter la voix
+        </button>
+
+        <button class="action-button" id="clearButton">
+          🧹 Effacer
+        </button>
+      </div>
+
+      <div class="notice" id="notice">
+        Le microphone nécessite une connexion HTTPS ou localhost,
+        ainsi que l'autorisation du navigateur. La reconnaissance
+        vocale dépend de la compatibilité du navigateur et de sa
+        configuration. Certains navigateurs transmettent l'audio
+        à un service distant pour le reconnaître.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🛍️ Essaie AÏNA</h2>
+
+      <p class="description">
+        Sélectionne un exemple pour tester une question commerciale.
       </p>
-      <button onclick="ouvrirService('Guide pédagogique Word/PDF')">
-        Consulter
-      </button>
-    </article>
-  </section>
 
-  <h2 class="titre-section">💼 Business et logistique</h2>
+      <div class="examples">
+        <button class="example" data-message="Kit solaire 3 lampes">
+          ☀️ Kit solaire 3 lampes
+        </button>
 
-  <section class="grille">
-    <article class="carte">
-      <div class="icone">📈</div>
-      <h3>Business Dangote</h3>
-      <p>
-        Espace pour organiser des idées commerciales,
-        étudier des projets et préparer un plan d'affaires.
-      </p>
-      <button onclick="ouvrirService('Business Dangote')">
-        Explorer
-      </button>
-    </article>
+        <button class="example" data-message="Présente GSIA Studio">
+          🏢 Présente GSIA Studio
+        </button>
 
-    <article class="carte">
-      <div class="icone">📦</div>
-      <h3>Suivi de colis</h3>
-      <p>
-        Prépare le suivi de tes expéditions grâce au numéro
-        de suivi fourni par ton transporteur.
-      </p>
-      <button onclick="suiviColis()">
-        Suivre un colis
-      </button>
-    </article>
-  </section>
+        <button class="example" data-message="Quelles sont vos formations ?">
+          🎓 Nos formations
+        </button>
 
-  <h2 class="titre-section">🛠️ Services techniques</h2>
+        <button class="example" data-message="Comment vous contacter ?">
+          📞 Contact
+        </button>
+      </div>
+    </section>
 
-  <section class="grille">
-    <article class="carte">
-      <div class="icone">☀️</div>
-      <h3>Électricité & solaire</h3>
-      <p>
-        Informations générales sur les installations électriques,
-        les panneaux solaires et l'efficacité énergétique.
-      </p>
-      <button onclick="ouvrirService('Électricité et solaire')">
-        Découvrir
-      </button>
-    </article>
+    <footer>
+      <strong>GSIA EMPIRE · AÏNA TALKTO</strong><br>
+      Une innovation au service de vos ambitions.<br>
+      Interface vocale de démonstration — V122.3
+    </footer>
 
-    <article class="carte">
-      <div class="icone">🚰</div>
-      <h3>Plomberie</h3>
-      <p>
-        Découvre les équipements, les matériaux et les bases
-        de l'entretien des installations sanitaires.
-      </p>
-      <button onclick="ouvrirService('Plomberie')">
-        Découvrir
-      </button>
-    </article>
+  </main>
 
-    <article class="carte">
-      <div class="icone">⚙️</div>
-      <h3>Soudure & métallerie</h3>
-      <p>
-        Informations sur les outils, les matériaux,
-        les assemblages et la sécurité professionnelle.
-      </p>
-      <button onclick="ouvrirService('Soudure et métallerie')">
-        Découvrir
-      </button>
-    </article>
+  <script>
+    "use strict";
 
-    <article class="carte">
-      <div class="icone">🧱</div>
-      <h3>Maçonnerie</h3>
-      <p>
-        Découvre les matériaux de construction, les outils
-        et les principales étapes d'un chantier.
-      </p>
-      <button onclick="ouvrirService('Maçonnerie')">
-        Découvrir
-      </button>
-    </article>
-  </section>
+    // ==========================================
+    // GSIA EMPIRE V122.3 - AÏNA TALKTO
+    // Reconnaissance et synthèse vocales
+    // ==========================================
 
-  <h2 class="titre-section">📱 Fonctionnement hors connexion</h2>
+    const $ = (id) => document.getElementById(id);
 
-  <section class="carte">
-    <h3>Ton espace numérique</h3>
-    <p id="connexion">Vérification de la connexion...</p>
-    <p>
-      Les pages déjà chargées peuvent être disponibles hors ligne
-      si le service worker et son cache ont été correctement installés.
-    </p>
-    <button onclick="verifierConnexion()">Vérifier la connexion</button>
-  </section>
+    const micButton = $("micButton");
+    const speakButton = $("speakButton");
+    const stopButton = $("stopButton");
+    const clearButton = $("clearButton");
+    const statusBox = $("status");
+    const transcriptBox = $("transcript");
+    const answerBox = $("answer");
+    const robot = $("robot");
+    const waves = $("waves");
+    const micCaption = $("micCaption");
+    const notice = $("notice");
 
-</main>
+    const SpeechRecognition =
+      window.SpeechRecognition ||
+      window.webkitSpeechRecognition;
 
-<footer>
-  <strong>GSIA EMPIRE</strong>
-  <p>Génie Savant d'IA · Formation · Création · Innovation</p>
-  <p>© <span id="annee"></span> GSIA Studio</p>
-</footer>
+    let recognition = null;
+    let isListening = false;
+    let isSpeaking = false;
+    let manualStop = false;
+    let latestAnswer = "Bonjour ! Comment puis-je t'aider ?";
 
-<script>
-  const discussion = document.getElementById("discussion");
-  const formulaire = document.getElementById("form-chat");
-  const champ = document.getElementById("question");
-  const etat = document.getElementById("etat");
+    // ------------------------------------------
+    // Affichage de l'état d'AÏNA
+    // ------------------------------------------
 
-  document.getElementById("annee").textContent =
-    new Date().getFullYear();
+    function setState(state, message) {
+      robot.classList.remove("listening", "speaking");
+      micButton.classList.remove("listening");
+      waves.classList.remove("active");
+      statusBox.classList.remove("listening", "speaking");
 
-  function ajouterMessage(texte, classe) {
-    const element = document.createElement("div");
-    element.className = "message " + classe;
-    element.textContent = texte;
-    discussion.appendChild(element);
-    discussion.scrollTop = discussion.scrollHeight;
-  }
+      if (state === "listening") {
+        robot.classList.add("listening");
+        micButton.classList.add("listening");
+        waves.classList.add("active");
+        statusBox.classList.add("listening");
 
-  function reponseAina(texte) {
-    const q = texte.toLowerCase();
+        micButton.textContent = "🟢";
+        micCaption.textContent = "Parle maintenant...";
+      } else if (state === "speaking") {
+        robot.classList.add("speaking");
+        waves.classList.add("active");
+        statusBox.classList.add("speaking");
 
-    if (q.includes("bonjour") || q.includes("salut")) {
-      return "Bonjour ! Bienvenue dans GSIA EMPIRE. Que souhaites-tu découvrir ?";
+        micButton.textContent = "🎤";
+        micCaption.textContent = "AÏNA est en train de parler...";
+      } else {
+        micButton.textContent = "🎤";
+        micCaption.textContent =
+          "Appuie sur le micro rouge pour parler";
+      }
+
+      statusBox.textContent = message;
     }
 
-    if (q.includes("parent") || q.includes("enfant") ||
-        q.includes("école") || q.includes("scolaire")) {
-      return "Le service Parent Suit Enfant est prévu pour faciliter le suivi scolaire. Les données réelles et les comptes utilisateurs doivent être configurés.";
+    // ------------------------------------------
+    // Synthèse vocale : faire parler AÏNA
+    // ------------------------------------------
+
+    function speak(text) {
+      if (!("speechSynthesis" in window)) {
+        setState(
+          "idle",
+          "La synthèse vocale n'est pas disponible."
+        );
+        return;
+      }
+
+      const message = String(text || "").trim();
+      if (!message) return;
+
+      // Annule la lecture précédente.
+      window.speechSynthesis.cancel();
+      isSpeaking = true;
+
+      const utterance = new SpeechSynthesisUtterance(message);
+
+      utterance.lang = "fr-FR";
+      utterance.rate = 0.94;
+      utterance.pitch = 1.05;
+      utterance.volume = 1;
+
+      // Recherche une voix française disponible.
+      const voices = window.speechSynthesis.getVoices();
+
+      const frenchVoice = voices.find(v =>
+        /^fr(-|_)/i.test(v.lang) &&
+        /google|français|france|female|amélie|audrey/i.test(v.name)
+      ) || voices.find(v =>
+        /^fr(-|_)/i.test(v.lang)
+      );
+
+      if (frenchVoice) {
+        utterance.voice = frenchVoice;
+      }
+
+      utterance.onstart = () => {
+        setState("speaking", "🗣️ AÏNA parle... Écoute !");
+      };
+
+      utterance.onend = () => {
+        isSpeaking = false;
+        setState("idle", "Réponse terminée. Je suis à ton écoute.");
+      };
+
+      utterance.onerror = (event) => {
+        isSpeaking = false;
+
+        if (event.error !== "canceled" &&
+            event.error !== "interrupted") {
+          setState("idle", "Impossible de lire la réponse vocale.");
+        }
+      };
+
+      window.speechSynthesis.speak(utterance);
     }
 
-    if (q.includes("guide") || q.includes("pédagogique") ||
-        q.includes("word") || q.includes("pdf")) {
-      return "Le Guide pédagogique est prévu pour accéder aux ressources Word et PDF. Les fichiers doivent être ajoutés à la plateforme.";
-    }
+    // ------------------------------------------
+    // Réponses de démonstration
+    // ------------------------------------------
 
-    if (q.includes("colis") || q.includes("suivi")) {
-      return "Pour suivre un colis, prépare le numéro de suivi et le nom du transporteur. Tu pourras ensuite consulter le site officiel de ce transporteur.";
-    }
+    function getAnswer(message) {
+      const q = message
+        .toLocaleLowerCase("fr-FR")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[!?.,;:]/g, " ")
+        .trim();
 
-    if (q.includes("business") || q.includes("entreprise") ||
-        q.includes("argent") || q.includes("commerce")) {
-      return "Pour préparer un projet commercial, définis le besoin du client, les coûts, les fournisseurs, le prix de vente et les bénéfices prévisionnels.";
-    }
+      if (/kit solaire|panneau solaire|lampe solaire/.test(q)) {
+        return (
+          "Bienvenue chez GSIA EMPIRE ! " +
+          "Tu recherches un kit solaire de trois lampes. " +
+          "Pour te proposer le bon produit, précise-moi " +
+          "si tu veux connaître le prix, le contenu du kit, " +
+          "son autonomie ou les modalités de livraison. " +
+          "Le prix et la disponibilité doivent être confirmés " +
+          "par le vendeur."
+        );
+      }
 
-    if (q.includes("solaire") || q.includes("électricité")) {
-      return "Pour un projet électrique ou solaire, évalue les besoins énergétiques et fais vérifier le dimensionnement et la sécurité par un professionnel qualifié.";
-    }
+      if (/bonjour|bonsoir|salut|coucou/.test(q)) {
+        return (
+          "Bonjour et bienvenue chez GSIA EMPIRE ! " +
+          "Je suis AÏNA, ton assistante vocale. " +
+          "Que puis-je faire pour toi aujourd'hui ?"
+        );
+      }
 
-    if (q.includes("plomberie")) {
-      return "La plomberie concerne notamment les canalisations, les raccords, les robinets et l'évacuation des eaux. Quel aspect souhaites-tu étudier ?";
-    }
+      if (/gsia studio|presente gsia|qui etes vous/.test(q)) {
+        return (
+          "GSIA Studio, Génie Savant d'IA, est une initiative " +
+          "de formation et d'accompagnement numérique. " +
+          "Nous mettons en valeur les compétences grâce " +
+          "à l'intelligence artificielle, aux outils numériques " +
+          "et à la création de supports pédagogiques."
+        );
+      }
 
-    if (q.includes("soudure") || q.includes("métallerie")) {
-      return "La soudure et la métallerie exigent des équipements de protection et une formation adaptée. Quel ouvrage souhaites-tu découvrir ?";
-    }
+      if (/formation|formations|cours|apprendre/.test(q)) {
+        return (
+          "GSIA Studio propose des activités de formation " +
+          "autour de l'intelligence artificielle, de la création " +
+          "de contenus, des supports pédagogiques et des outils " +
+          "numériques. Pour connaître les prochaines sessions, " +
+          "les tarifs et les places disponibles, contacte " +
+          "directement l'équipe GSIA Studio."
+        );
+      }
 
-    if (q.includes("maçonnerie") || q.includes("construction")) {
-      return "Un projet de maçonnerie commence par l'étude du terrain, les plans, le choix des matériaux et le respect des règles de construction.";
-    }
+      if (/contact|telephone|numero|joindre|appeler/.test(q)) {
+        return (
+          "Pour joindre GSIA Studio au sujet des formations, " +
+          "tu peux essayer le numéro de contact communiqué " +
+          "sur les supports officiels : 92 81 75 93. " +
+          "Précise l'objet de ta demande lors de ton message."
+        );
+      }
 
-    if (q.includes("aide") || q.includes("service")) {
-      return "Je peux te présenter les services : éducation, guide pédagogique, business, suivi de colis, électricité et solaire, plomberie, soudure et maçonnerie.";
-    }
+      if (/merci|je te remercie/.test(q)) {
+        return (
+          "Avec plaisir ! Merci de faire confiance à GSIA EMPIRE. " +
+          "Je reste disponible pour t'aider."
+        );
+      }
 
-    return "Je suis AÏNA, dans ma version locale de démonstration. Ma base de réponses est limitée. Une connexion à un service d'intelligence artificielle est nécessaire pour répondre librement à des questions variées.";
-  }
+      if (/au revoir|a bientot|bonne journee/.test(q)) {
+        return (
+          "Merci pour cette conversation. À très bientôt " +
+          "chez GSIA EMPIRE !"
+        );
+      }
 
-  formulaire.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const texte = champ.value.trim();
-    if (!texte) return;
-
-    ajouterMessage(texte, "utilisateur");
-    champ.value = "";
-
-    ajouterMessage(reponseAina(texte), "assistant");
-  });
-
-  function ouvrirService(nom) {
-    ajouterMessage(
-      "Service sélectionné : " + nom +
-      ". Son module complet doit encore être configuré.",
-      "assistant"
-    );
-
-    discussion.scrollIntoView({ behavior: "smooth", block: "center" });
-  }
-
-  function suiviColis() {
-    const numero = prompt("Entre le numéro de suivi de ton colis :");
-
-    if (numero && numero.trim()) {
-      alert(
-        "Numéro enregistré pour consultation : " + numero.trim() +
-        "\n\nPour connaître le statut réel, consulte le site officiel de ton transporteur."
+      return (
+        "J'ai bien reçu ta demande : " + message + ". " +
+        "Je suis actuellement en mode démonstration. " +
+        "Ma base de réponses est limitée et je ne peux pas " +
+        "encore consulter un catalogue en direct. " +
+        "Peux-tu préciser ta question pour que je t'oriente ?"
       );
     }
-  }
 
-  function verifierConnexion() {
-    document.getElementById("connexion").textContent =
-      navigator.onLine
-        ? "Connexion Internet détectée."
-        : "Hors connexion : seules les fonctionnalités locales sont disponibles.";
-  }
+    // ------------------------------------------
+    // Traiter le texte reconnu
+    // ------------------------------------------
 
-  window.addEventListener("online", verifierConnexion);
-  window.addEventListener("offline", verifierConnexion);
-  verifierConnexion();
+    function processMessage(message) {
+      const cleanMessage = String(message || "").trim();
 
-  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-    window.addEventListener("load", function() {
-      navigator.serviceWorker.register("./sw-gsia.js")
-        .then(function() {
-          etat.textContent =
-            "Service worker enregistré. La disponibilité hors ligne dépend du cache configuré.";
-        })
-        .catch(function() {
-          etat.textContent =
-            "Mode local disponible. Vérifie le fichier sw-gsia.js pour activer le cache hors ligne.";
-        });
+      if (!cleanMessage) {
+        setState("idle", "Je n'ai pas compris. Essaie encore.");
+        return;
+      }
+
+      transcriptBox.textContent = cleanMessage;
+
+      latestAnswer = getAnswer(cleanMessage);
+      answerBox.textContent = latestAnswer;
+
+      speak(latestAnswer);
+    }
+
+    // ------------------------------------------
+    // Initialisation de la reconnaissance vocale
+    // ------------------------------------------
+
+    function initializeRecognition() {
+      if (!SpeechRecognition) {
+        micButton.disabled = true;
+        notice.textContent =
+          "La reconnaissance vocale n'est pas prise en charge " +
+          "par ce navigateur. Essaie Chrome à jour sur Android, " +
+          "avec une connexion HTTPS. La synthèse vocale peut " +
+          "néanmoins fonctionner séparément.";
+        setState("idle", "Reconnaissance vocale indisponible.");
+        return;
+      }
+
+      recognition = new SpeechRecognition();
+      recognition.lang = "fr-FR";
+      recognition.continuous = false;
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = () => {
+        isListening = true;
+        manualStop = false;
+
+        setState(
+          "listening",
+          "🎤 J'écoute... Parlez !"
+        );
+
+        transcriptBox.textContent = "Je vous écoute...";
+      };
+
+      recognition.onresult = (event) => {
+        let interim = "";
+        let finalText = "";
+
+        for (let i = event.resultIndex;
+             i < event.results.length;
+             i++) {
+          const text = event.results[i][0].transcript;
+
+          if (event.results[i].isFinal) {
+            finalText += text;
+          } else {
+            interim += text;
+          }
+        }
+
+        if (interim) {
+          transcriptBox.textContent = interim;
+        }
+
+        if (finalText.trim()) {
+          processMessage(finalText);
+        }
+      };
+
+      recognition.onerror = (event) => {
+        isListening = false;
+
+        const messages = {
+          "not-allowed":
+            "Microphone refusé. Autorise-le dans Chrome.",
+          "service-not-allowed":
+            "Le service vocal n'est pas autorisé.",
+          "no-speech":
+            "Aucune parole détectée. Réessaie.",
+          "audio-capture":
+            "Aucun microphone disponible.",
+          "network":
+            "Erreur réseau du service de reconnaissance vocale.",
+          "aborted":
+            "Écoute interrompue."
+        };
+
+        const errorMessage =
+          messages[event.error] ||
+          "Erreur vocale : " + event.error;
+
+        setState("idle", errorMessage);
+      };
+
+      recognition.onend = () => {
+        isListening = false;
+
+        if (!isSpeaking && !manualStop) {
+          setState("idle", "Écoute terminée. À toi de parler !");
+        } else if (manualStop && !isSpeaking) {
+          setState("idle", "Écoute arrêtée.");
+        }
+      };
+    }
+
+    // ------------------------------------------
+    // Bouton microphone
+    // ------------------------------------------
+
+    micButton.addEventListener("click", () => {
+      if (!recognition) {
+        initializeRecognition();
+
+        if (!recognition) return;
+      }
+
+      if (isListening) {
+        manualStop = true;
+
+        try {
+          recognition.stop();
+        } catch (error) {
+          setState("idle", "Écoute arrêtée.");
+        }
+
+        return;
+      }
+
+      if (isSpeaking) {
+        window.speechSynthesis.cancel();
+        isSpeaking = false;
+      }
+
+      manualStop = false;
+
+      try {
+        recognition.start();
+      } catch (error) {
+        setState(
+          "idle",
+          "Impossible de démarrer le micro. Réessaie."
+        );
+      }
     });
-  }
-</script>
 
+    // ------------------------------------------
+    // Boutons de commande
+    // ------------------------------------------
+
+    speakButton.addEventListener("click", () => {
+      speak(latestAnswer);
+    });
+
+    stopButton.addEventListener("click", () => {
+      manualStop = true;
+
+      if (recognition && isListening) {
+        try {
+          recognition.abort();
+        } catch (error) {
+          // Rien à faire si la reconnaissance est déjà arrêtée.
+        }
+      }
+
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+
+      isListening = false;
+      isSpeaking = false;
+
+      setState("idle", "Lecture vocale et écoute arrêtées.");
+    });
+
+    clearButton.addEventListener("click", () => {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+
+      if (recognition && isListening) {
+        try {
+          recognition.abort();
+        } catch (error) {
+          // La reconnaissance peut déjà être arrêtée.
+        }
+      }
+
+      isListening = false;
+      isSpeaking = false;
+      manualStop = true;
+
+      transcriptBox.textContent = "En attente de votre message...";
+      answerBox.textContent = "Bonjour ! Comment puis-je t'aider ?";
+      latestAnswer = "Bonjour ! Comment puis-je t'aider ?";
+
+      setState("idle", "Tout est effacé. AÏNA est prête.");
+    });
+
+    // ------------------------------------------
+    // Exemples de questions
+    // ------------------------------------------
+
+    document.querySelectorAll("[data-message]").forEach(button => {
+      button.addEventListener("click", () => {
+        if (recognition && isListening) {
+          try {
+            recognition.abort();
+          } catch (error) {
+            // Ignore si le micro est déjà arrêté.
+          }
+        }
+
+        if ("speechSynthesis" in window) {
+          window.speechSynthesis.cancel();
+        }
+
+        isListening = false;
+        isSpeaking = false;
+
+        processMessage(button.dataset.message);
+      });
+    });
+
+    // ------------------------------------------
+    // Démarrage
+    // ------------------------------------------
+
+    initializeRecognition();
+
+    // Certaines voix sont chargées de façon asynchrone.
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+
+      window.speechSynthesis.getVoices();
+    }
+  </script>
 </body>
 </html>
+
 
