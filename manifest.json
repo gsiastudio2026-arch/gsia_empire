@@ -1,24 +1,24 @@
 {
-  "name": "GSIA CITE IMPERIALE",
-  "short_name": "GSIA-ZEM",
-  "description": "Ecosystème Central Togo - Education Business Tontine",
-  "start_url": "./",
-  "scope": "./",
+  "name": "GSIA EMPIRE - AÏNA TALKTO V122.4",
+  "short_name": "GSIA EMPIRE",
+  "description": "Innovation, Éducation, IA vocale - 500 Métiers - Offline",
+  "start_url": "/gsia_empire/",
   "display": "standalone",
-  "background_color": "#070A12",
-  "theme_color": "#ffbb00",
+  "background_color": "#061226",
+  "theme_color": "#061226",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "./gsia_new_512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "src": "https://cdn-icons-png.flaticon.com/512/4712/4712109.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      "src": "./gsia_new_512.png",
-      "sizes": "192x192",
+      "src": "https://cdn-icons-png.flaticon.com/512/4712/4712109.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
 }
+
+
